@@ -37,3 +37,7 @@ button {
     background-repeat: no-repeat;
     padding: 80px 20px;
 }
+img {
+  max-width: 100%;
+  height: auto;
+}
