@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #f5f8fc;
+    color: #25384f;
+    text-align: center;
+}
+
+h1 {
+    font-size: 48px;
+    color: #1b3a5c;
+    margin-top: 100px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+button {
+    background-color: #1b3a5c;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.hero {
+    background-image: url("hero-study.PNG");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 80px 20px;
+}
