@@ -3,840 +3,91 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>soLVia｜講師と一緒に頑張れる、中高生のオンライン自習室</title>
-<meta name="description" content="家では続かない勉強も、soLViaなら続けられる。中高生のための講師付きオンライン自習室。わからない問題はその場で解決、仲間と切磋琢磨できる環境です。夏休み期間中は無料開放中。">
-<link rel="icon" href="assets/logo_icon.png">
+<title>soLVia｜オンライン学習塾</title>
+<meta name="description" content="中高生のためのオンライン学習塾 soLVia。オンライン自習室・問題解説・学習AIサポートで、続けられる学習習慣をつくります。">
+<link rel="icon" href="assets/logo.JPG">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --navy:#1B3A5C;
-    --navy-deep:#0F2438;
-    --sky:#6FA0D8;
-    --sky-light:#BFDCF5;
-    --teal:#4FC3BE;
-    --amber:#F0A94E;
-    --paper:#F5F8FC;
-    --white:#FFFFFF;
-    --ink:#25384F;
-    --ink-soft:#5B7089;
-    --line:#DCE6F2;
-    --shadow: 0 20px 50px -25px rgba(27,58,92,0.35);
-    --radius: 18px;
-  }
-
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:'Zen Kaku Gothic New', -apple-system, BlinkMacSystemFont, 'Hiragino Sans', sans-serif;
-    line-height:1.8;
-    -webkit-font-smoothing:antialiased;
-  }
-  h1,h2,h3,.serif{
-    font-family:'Shippori Mincho', serif;
-    color:var(--navy);
-    margin:0;
-  }
-  p{margin:0;}
-  a{color:inherit;text-decoration:none;}
-  img{max-width:100%;display:block;}
-  section{position:relative;}
-
-  .wrap{
-    max-width:1080px;
-    margin:0 auto;
-    padding:0 24px;
-  }
-
-  @media (prefers-reduced-motion: reduce){
-    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
-  }
-
-  /* ---------- NAV ---------- */
-  header.site-nav{
-    position:sticky;
-    top:0;
-    z-index:50;
-    background:rgba(245,248,252,0.86);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--line);
-  }
-  .nav-inner{
-    max-width:1080px;
-    margin:0 auto;
-    padding:14px 24px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-  }
-  .brand{
-    display:flex;
-    align-items:center;
-    gap:10px;
-  }
-  .brand img{height:38px;width:auto;}
-  .brand span{
-    font-family:'Shippori Mincho', serif;
-    font-weight:600;
-    font-size:1.25rem;
-    color:var(--navy);
-    letter-spacing:0.02em;
-  }
-  nav.links{
-    display:flex;
-    align-items:center;
-    gap:28px;
-  }
-  nav.links a{
-    font-size:0.92rem;
-    font-weight:500;
-    color:var(--ink-soft);
-    padding:6px 0;
-    border-bottom:1px solid transparent;
-    transition:color .2s, border-color .2s;
-    white-space:nowrap;
-  }
-  nav.links a:hover{color:var(--navy); border-color:var(--sky);}
-  .nav-cta{
-    background:var(--navy);
-    color:var(--white) !important;
-    padding:10px 20px;
-    border-radius:999px;
-    font-weight:700;
-    font-size:0.86rem !important;
-    border:none !important;
-  }
-  .nav-cta:hover{background:var(--navy-deep); color:var(--white) !important;}
-  .menu-toggle{display:none;}
-
-  @media (max-width: 760px){
-    nav.links a:not(.nav-cta){display:none;}
-    .nav-cta{padding:9px 16px; font-size:0.8rem !important;}
-    .brand span{font-size:1.05rem;}
-    .brand img{height:32px;}
-  }
-
-  /* ---------- HERO ---------- */
-  .hero{
-    padding:88px 0 100px;
-    overflow:hidden;
-    background:
-      radial-gradient(ellipse 60% 50% at 50% 0%, rgba(111,160,216,0.16), transparent 70%),
-      linear-gradient(180deg, #F8FAFD 0%, var(--paper) 100%);
-  }
-  .hero-inner{
-    position:relative;
-    text-align:center;
-    max-width:760px;
-    margin:0 auto;
-  }
-  .lamp-glow{
-    position:absolute;
-    top:-140px;
-    left:50%;
-    transform:translateX(-50%);
-    width:520px;
-    height:520px;
-    border-radius:50%;
-    background:radial-gradient(circle, rgba(240,169,78,0.20) 0%, rgba(111,160,216,0.14) 45%, transparent 72%);
-    filter:blur(6px);
-    animation:glow-pulse 6s ease-in-out infinite;
-    pointer-events:none;
-    z-index:0;
-  }
-  @keyframes glow-pulse{
-    0%,100%{opacity:0.75; transform:translateX(-50%) scale(1);}
-    50%{opacity:1; transform:translateX(-50%) scale(1.06);}
-  }
-  .sparkle{
-    position:absolute;
-    color:var(--sky);
-    opacity:0.55;
-    animation:sparkle-float 5s ease-in-out infinite;
-    z-index:0;
-  }
-  .sparkle.s1{top:8%; left:8%; font-size:22px; animation-delay:0s;}
-  .sparkle.s2{top:60%; left:2%; font-size:14px; animation-delay:1.4s; color:var(--teal);}
-  .sparkle.s3{top:2%; right:6%; font-size:16px; animation-delay:0.7s; color:var(--teal);}
-  .sparkle.s4{top:55%; right:4%; font-size:24px; animation-delay:2.1s;}
-  @keyframes sparkle-float{
-    0%,100%{transform:translateY(0) rotate(0deg); opacity:0.35;}
-    50%{transform:translateY(-14px) rotate(12deg); opacity:0.85;}
-  }
-
-  .eyebrow-badge{
-    position:relative;
-    z-index:1;
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    background:linear-gradient(90deg, rgba(240,169,78,0.14), rgba(240,169,78,0.05));
-    border:1px solid rgba(240,169,78,0.45);
-    color:#9A6417;
-    font-weight:700;
-    font-size:0.82rem;
-    padding:7px 16px;
-    border-radius:999px;
-    margin-bottom:28px;
-    letter-spacing:0.03em;
-  }
-  .eyebrow-badge .dot{
-    width:7px; height:7px; border-radius:50%;
-    background:var(--amber);
-    animation:dot-pulse 1.8s ease-in-out infinite;
-  }
-  @keyframes dot-pulse{
-    0%,100%{opacity:1; box-shadow:0 0 0 0 rgba(240,169,78,0.5);}
-    50%{opacity:0.6; box-shadow:0 0 0 6px rgba(240,169,78,0);}
-  }
-
-  .hero h1{
-    position:relative;
-    z-index:1;
-    font-size:clamp(1.9rem, 4.4vw, 2.9rem);
-    font-weight:700;
-    line-height:1.55;
-    letter-spacing:0.01em;
-  }
-  .hero h1 em{
-    font-style:normal;
-    color:var(--sky);
-    background:linear-gradient(180deg, transparent 62%, rgba(111,160,216,0.28) 62%);
-  }
-  .hero p.lead{
-    position:relative;
-    z-index:1;
-    margin:26px auto 0;
-    max-width:560px;
-    color:var(--ink-soft);
-    font-size:1.02rem;
-  }
-  .hero-ctas{
-    position:relative;
-    z-index:1;
-    margin-top:40px;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:14px;
-  }
-  .btn-primary{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    background:var(--navy);
-    color:var(--white);
-    font-weight:700;
-    font-size:1rem;
-    padding:16px 34px;
-    border-radius:999px;
-    box-shadow:var(--shadow);
-    transition:transform .2s ease, background .2s ease;
-  }
-  .btn-primary:hover{background:var(--navy-deep); transform:translateY(-2px);}
-  .btn-primary svg{width:18px; height:18px; flex-shrink:0;}
-  .hero-note{
-    font-size:0.84rem;
-    color:var(--ink-soft);
-    opacity:0.85;
-  }
-
-  .hero-visual{
-    position:relative;
-    z-index:1;
-    margin-top:64px;
-    display:flex;
-    justify-content:center;
-  }
-  .hero-visual img{
-    width:150px;
-    opacity:0.94;
-    filter:drop-shadow(0 24px 40px rgba(27,58,92,0.18));
-  }
-
-  /* ---------- SECTION HEADERS ---------- */
-  .section-head{
-    text-align:center;
-    max-width:600px;
-    margin:0 auto 56px;
-  }
-  .section-head .kicker{
-    display:inline-block;
-    font-size:0.78rem;
-    font-weight:700;
-    letter-spacing:0.14em;
-    color:var(--teal);
-    text-transform:uppercase;
-    margin-bottom:14px;
-  }
-  .section-head h2{
-    font-size:clamp(1.5rem, 3vw, 2rem);
-    font-weight:700;
-    line-height:1.5;
-  }
-  .section-head p{
-    margin-top:16px;
-    color:var(--ink-soft);
-    font-size:0.98rem;
-  }
-
-  /* ---------- ABOUT / FEATURES ---------- */
-  .about{padding:110px 0 90px;}
-  .feature-grid{
-    display:grid;
-    grid-template-columns:repeat(3, 1fr);
-    gap:26px;
-  }
-  .feature-card{
-    background:var(--white);
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    padding:34px 28px;
-    transition:transform .25s ease, box-shadow .25s ease;
-  }
-  .feature-card:hover{transform:translateY(-4px); box-shadow:var(--shadow);}
-  .feature-icon{
-    width:48px; height:48px;
-    border-radius:14px;
-    display:flex; align-items:center; justify-content:center;
-    background:linear-gradient(135deg, rgba(111,160,216,0.16), rgba(79,195,190,0.16));
-    margin-bottom:20px;
-  }
-  .feature-icon svg{width:24px; height:24px; stroke:var(--navy);}
-  .feature-card h3{
-    font-size:1.08rem;
-    font-weight:700;
-    margin-bottom:10px;
-    color:var(--navy);
-  }
-  .feature-card p{
-    color:var(--ink-soft);
-    font-size:0.92rem;
-    line-height:1.85;
-  }
-
-  @media (max-width:820px){
-    .feature-grid{grid-template-columns:1fr;}
-  }
-
-  /* ---------- FLOW ---------- */
-  .flow{
-    padding:90px 0;
-    background:var(--white);
-    border-top:1px solid var(--line);
-    border-bottom:1px solid var(--line);
-  }
-  .flow-steps{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:0;
-    position:relative;
-  }
-  .flow-steps::before{
-    content:"";
-    position:absolute;
-    top:26px;
-    left:16.6%;
-    right:16.6%;
-    height:1px;
-    background:repeating-linear-gradient(90deg, var(--sky-light) 0 10px, transparent 10px 18px);
-  }
-  .flow-step{
-    position:relative;
-    padding:0 22px;
-    text-align:center;
-  }
-  .flow-num{
-    position:relative;
-    z-index:1;
-    width:52px; height:52px;
-    margin:0 auto 22px;
-    border-radius:50%;
-    background:var(--paper);
-    border:1px solid var(--sky-light);
-    display:flex; align-items:center; justify-content:center;
-    font-family:'Shippori Mincho', serif;
-    font-weight:700;
-    color:var(--navy);
-    font-size:1.1rem;
-  }
-  .flow-step h3{
-    font-size:1.02rem;
-    font-weight:700;
-    margin-bottom:10px;
-    color:var(--navy);
-  }
-  .flow-step p{
-    font-size:0.9rem;
-    color:var(--ink-soft);
-    line-height:1.85;
-  }
-  @media (max-width:820px){
-    .flow-steps{grid-template-columns:1fr; gap:40px;}
-    .flow-steps::before{display:none;}
-  }
-
-  /* ---------- AUDIENCE + TEACHER ---------- */
-  .split{
-    padding:100px 0;
-  }
-  .split-inner{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:44px;
-    align-items:stretch;
-  }
-  .split-card{
-    background:var(--white);
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    padding:40px;
-  }
-  .split-card .kicker{
-    display:inline-block;
-    font-size:0.76rem;
-    font-weight:700;
-    letter-spacing:0.12em;
-    text-transform:uppercase;
-    color:var(--sky);
-    margin-bottom:14px;
-  }
-  .split-card h3{
-    font-size:1.35rem;
-    font-weight:700;
-    margin-bottom:16px;
-  }
-  .split-card p{
-    color:var(--ink-soft);
-    font-size:0.95rem;
-    line-height:1.9;
-  }
-  .tag-row{
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-    margin-top:22px;
-  }
-  .tag{
-    font-size:0.82rem;
-    font-weight:700;
-    color:var(--navy);
-    background:var(--sky-light);
-    padding:7px 14px;
-    border-radius:999px;
-  }
-  .teacher-row{
-    display:flex;
-    align-items:flex-start;
-    gap:18px;
-    margin-top:22px;
-  }
-  .teacher-avatar{
-    width:56px; height:56px;
-    border-radius:50%;
-    flex-shrink:0;
-    background:linear-gradient(135deg, var(--sky), var(--teal));
-    display:flex; align-items:center; justify-content:center;
-    color:var(--white);
-    font-family:'Shippori Mincho', serif;
-    font-weight:700;
-    font-size:1.2rem;
-  }
-  .teacher-meta{font-size:0.88rem; color:var(--ink-soft);}
-  .teacher-meta strong{display:block; color:var(--navy); font-size:1rem; margin-bottom:4px;}
-
-  @media (max-width:820px){
-    .split-inner{grid-template-columns:1fr;}
-  }
-
-  /* ---------- PRICING ---------- */
-  .pricing{
-    padding:100px 0;
-    background:var(--white);
-    border-top:1px solid var(--line);
-    border-bottom:1px solid var(--line);
-  }
-  .price-grid{
-    display:grid;
-    grid-template-columns:1.15fr 1fr;
-    gap:26px;
-    align-items:stretch;
-  }
-  .price-card{
-    border-radius:22px;
-    padding:44px;
-    position:relative;
-    overflow:hidden;
-  }
-  .price-card.featured{
-    background:linear-gradient(150deg, var(--navy) 0%, var(--navy-deep) 100%);
-    color:var(--white);
-    box-shadow:var(--shadow);
-  }
-  .price-card.featured::after{
-    content:"";
-    position:absolute;
-    width:280px; height:280px;
-    right:-90px; top:-90px;
-    background:radial-gradient(circle, rgba(240,169,78,0.28), transparent 70%);
-    border-radius:50%;
-  }
-  .price-card.plain{
-    background:var(--paper);
-    border:1px solid var(--line);
-    color:var(--ink);
-  }
-  .price-tag{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    font-size:0.78rem;
-    font-weight:700;
-    letter-spacing:0.06em;
-    padding:6px 14px;
-    border-radius:999px;
-    margin-bottom:22px;
-  }
-  .price-card.featured .price-tag{background:rgba(240,169,78,0.22); color:#FBCE8E;}
-  .price-card.plain .price-tag{background:var(--sky-light); color:var(--navy);}
-  .price-card h3{
-    font-family:'Shippori Mincho', serif;
-    font-size:1.5rem;
-    font-weight:700;
-    margin-bottom:14px;
-    position:relative;
-    color:inherit;
-  }
-  .price-card .price-num{
-    font-family:'Shippori Mincho', serif;
-    font-size:2.6rem;
-    font-weight:800;
-    margin:6px 0 18px;
-    position:relative;
-  }
-  .price-card .price-num small{
-    font-size:0.95rem;
-    font-weight:500;
-    margin-left:6px;
-    opacity:0.75;
-  }
-  .price-card p{
-    font-size:0.92rem;
-    line-height:1.9;
-    position:relative;
-  }
-  .price-card.featured p{color:rgba(255,255,255,0.82);}
-  .price-card.plain p{color:var(--ink-soft);}
-  .price-card ul{
-    list-style:none;
-    padding:0;
-    margin:22px 0 0;
-    display:flex;
-    flex-direction:column;
-    gap:11px;
-    position:relative;
-  }
-  .price-card li{
-    display:flex;
-    align-items:flex-start;
-    gap:10px;
-    font-size:0.9rem;
-  }
-  .price-card li svg{width:16px; height:16px; margin-top:3px; flex-shrink:0;}
-  .price-card.featured li svg{stroke:#8FD8D3;}
-  .price-card.plain li svg{stroke:var(--sky);}
-
-  @media (max-width:820px){
-    .price-grid{grid-template-columns:1fr;}
-  }
-
-  /* ---------- CONTACT ---------- */
-  .contact{padding:100px 0 120px;}
-  .contact-panel{
-    background:var(--white);
-    border:1px solid var(--line);
-    border-radius:24px;
-    padding:44px;
-    box-shadow:var(--shadow);
-  }
-  .form-frame-wrap{
-    border-radius:16px;
-    overflow:hidden;
-    border:1px solid var(--line);
-    background:var(--paper);
-  }
-  .form-frame-wrap iframe{
-    width:100%;
-    height:1000px;
-    border:none;
-    display:block;
-  }
-  .contact-alt{
-    text-align:center;
-    margin-top:22px;
-    font-size:0.88rem;
-    color:var(--ink-soft);
-  }
-  .contact-alt a{
-    color:var(--navy);
-    font-weight:700;
-    border-bottom:1px solid var(--sky);
-  }
-
-  /* ---------- FOOTER ---------- */
-  footer{
-    background:var(--navy-deep);
-    color:rgba(255,255,255,0.72);
-    padding:50px 0 34px;
-  }
-  .footer-inner{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:18px;
-    text-align:center;
-  }
-  .footer-inner img{height:40px; opacity:0.92;}
-  .footer-inner p{font-size:0.8rem; color:rgba(255,255,255,0.5);}
-
-  ::selection{background:var(--sky-light); color:var(--navy);}
-
-  /* focus visibility */
-  a:focus-visible, button:focus-visible{
-    outline:2px solid var(--sky);
-    outline-offset:3px;
-  }
-
-  /* gentle reveal-on-scroll (progressive enhancement; content is visible by default) */
-  .reveal{opacity:1; transform:none;}
-  .js-ready .reveal{
-    opacity:0;
-    transform:translateY(18px);
-    transition:opacity .7s ease, transform .7s ease;
-  }
-  .js-ready .reveal.in{opacity:1; transform:translateY(0);}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@500;700&family=Noto+Serif+JP:wght@500;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Space+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="site-nav">
-  <div class="nav-inner">
-    <a class="brand" href="#top">
-      <img src="assets/logo_transparent.png" alt="soLVia ロゴ">
-      <span>soLVia</span>
+<header>
+  <div class="nav-wrap">
+    <a href="index.html" class="brand">
+      <img src="assets/logo.JPG" alt="soLVia ロゴ">
+      <span class="brand-text">soLVia</span>
     </a>
-    <nav class="links">
-      <a href="#about">サービス紹介</a>
-      <a href="#pricing">料金</a>
-      <a href="#contact">お問い合わせ</a>
-      <a class="nav-cta" href="#contact">無料で参加する</a>
+    <button class="menu-btn" id="menuBtn" aria-label="メニュー">☰</button>
+    <nav>
+      <ul id="navList">
+        <li><a href="index.html" class="active">ホーム</a></li>
+        <li><a href="service.html">サービス内容</a></li>
+        <li><a href="price.html">料金</a></li>
+        <li><a href="contact.html">お問い合わせ</a></li>
+      </ul>
     </nav>
   </div>
 </header>
 
-<main id="top">
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="wrap hero-inner">
-      <div class="lamp-glow"></div>
-      <span class="sparkle s1">✦</span>
-      <span class="sparkle s2">✦</span>
-      <span class="sparkle s3">✦</span>
-      <span class="sparkle s4">✦</span>
-
-      <div class="eyebrow-badge"><span class="dot"></span>夏休み期間中、自習室は無料開放中</div>
-
-      <h1>「今日はやめとこうかな」を、<br><em>「今日もできた」</em>に変える。</h1>
-      <p class="lead">家だとひとりで続かない勉強も、画面の向こうに先生と仲間がいれば続けられる。中高生のための、講師付きオンライン自習室 soLVia です。</p>
-
-      <div class="hero-ctas">
-        <a class="btn-primary" href="#contact">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          無料で自習室に参加する
-        </a>
-        <span class="hero-note">お申し込みはGoogleフォームから、1分で完了します</span>
-      </div>
-
-      <div class="hero-visual">
-        <img src="assets/logo_icon.png" alt="">
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT / FEATURES -->
-  <section class="about" id="about">
+<main>
+  <div class="hero">
+    <svg class="via-line" viewBox="0 0 400 500" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M 380 0 C 260 120, 340 260, 200 340 S 60 460, 40 500" stroke="#c9a86a" stroke-width="1" fill="none" stroke-dasharray="4 8" opacity="0.6"/>
+      <circle cx="380" cy="0" r="3" fill="#c9a86a"/>
+      <circle cx="200" cy="340" r="3" fill="#c9a86a"/>
+      <circle cx="40" cy="500" r="3" fill="#c9a86a"/>
+    </svg>
     <div class="wrap">
-      <div class="section-head reveal">
-        <span class="kicker">Service</span>
-        <h2>ひとりで机に向かうのが苦手でも、<br>ここでなら続けられる。</h2>
-        <p>Zoomでつながるオンライン自習室に、先生と仲間がいます。わからない問題はその場で、周りの目があるから集中も続く。soLViaが大切にしているのは、この3つです。</p>
-      </div>
-
-      <div class="feature-grid">
-        <div class="feature-card reveal">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v10m0 0a3 3 0 100 6 3 3 0 000-6zM7 8l-3 2m16-2l3 2"/></svg>
-          </div>
-          <h3>すぐそばに先生がいる安心感</h3>
-          <p>自習室にはいつも先生が待機。わからない問題があれば、挙手ひとつでプライベートルームに移動し、その場で1対1の解説が受けられます。</p>
-        </div>
-        <div class="feature-card reveal">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 20v-2a4 4 0 00-4-4H7a4 4 0 00-4 4v2M11 4a4 4 0 110 8 4 4 0 010-8zM23 20v-2a4 4 0 00-3-3.87M16 4.13a4 4 0 010 7.75"/></svg>
-          </div>
-          <h3>仲間と机を並べる緊張感</h3>
-          <p>画面越しでも、黙々と勉強する仲間の姿が見える環境。ひとりでは続かない集中も、頑張っている誰かがそばにいれば、自然と続きます。</p>
-        </div>
-        <div class="feature-card reveal">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20l9-5-9-5-9 5 9 5zM12 20V10M3 10l9-5 9 5"/></svg>
-          </div>
-          <h3>「わかった」で終わらせない</h3>
-          <p>答えだけを渡すのではなく、「なぜそうなるのか」を一緒に考えます。理解できた実感が、次も机に向かう力になります。</p>
-        </div>
+      <div class="hero-eyebrow">ONLINE 学習塾 ・ 中学生 / 高校生 対象</div>
+      <h1>解けなかった一問が、<br>解ける一問に変わる場所。</h1>
+      <p class="lead">オンライン自習室・問題解説・学習AIサポートを組み合わせた、soLViaの学習スタイル。自分のペースで、着実に前へ進みます。</p>
+      <div class="hero-cta">
+        <a href="price.html" class="btn btn-solid">料金を見る</a>
+        <a href="service.html" class="btn btn-outline">サービス内容へ</a>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- FLOW -->
-  <section class="flow">
+  <div class="section section-light">
     <div class="wrap">
-      <div class="section-head reveal">
-        <span class="kicker">How it works</span>
-        <h2>利用のながれ</h2>
-        <p>特別な準備はいりません。Zoomがあれば、今日からすぐに参加できます。</p>
-      </div>
-
-      <div class="flow-steps">
-        <div class="flow-step reveal">
-          <div class="flow-num">01</div>
-          <h3>Zoomの自習室に入室</h3>
-          <p>開室時間になったら、Zoomリンクから自習室へ。カメラをオンにして、静かに勉強をスタートします。</p>
+      <div class="eyebrow">ABOUT SOLVIA</div>
+      <h2>「わかる」までひとりにしない</h2>
+      <p class="desc">soLViaは、画面の向こうに講師がいるオンライン学習塾です。自習室で集中し、わからない問題は解説で解決し、AIが学習の道すじを整える。この3つが連動することで、遠回りしない学習が可能になります。</p>
+      <div class="service-row">
+        <div class="service-card">
+          <a href="service.html#room">
+            <div class="service-num">01</div>
+            <h3>オンライン自習室</h3>
+            <p>毎日決まった時間に入室できる、集中のための場所。</p>
+          </a>
         </div>
-        <div class="flow-step reveal">
-          <div class="flow-num">02</div>
-          <h3>もくもくと自分の勉強を進める</h3>
-          <p>学校の宿題でも、受験勉強でも内容は自由。先生と仲間が見守る中、自分のペースで進められます。</p>
+        <div class="service-card">
+          <a href="service.html#explain">
+            <div class="service-num">02</div>
+            <h3>問題解説</h3>
+            <p>つまずいた一問を、講師がその場で丁寧に解説。</p>
+          </a>
         </div>
-        <div class="flow-step reveal">
-          <div class="flow-num">03</div>
-          <h3>わからなければ挙手して質問</h3>
-          <p>合図するだけでプライベートルームへ移動。先生とマンツーマンで、その場で疑問を解決します。</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- AUDIENCE + TEACHER -->
-  <section class="split">
-    <div class="wrap split-inner">
-      <div class="split-card reveal">
-        <span class="kicker">For You</span>
-        <h3>対象は中高生。<br>受験生でも、そうでなくても。</h3>
-        <p>「受験生じゃないと使えない」ということはありません。学校の宿題をコツコツ進めたい人も、志望校に向けて本気で頑張りたい人も、誰でも歓迎です。</p>
-        <div class="tag-row">
-          <span class="tag">中学生</span>
-          <span class="tag">高校生</span>
-          <span class="tag">受験生</span>
-          <span class="tag">非受験生もOK</span>
-        </div>
-      </div>
-      <div class="split-card reveal">
-        <span class="kicker">Teacher</span>
-        <h3>指導するのは、現役理系大学生</h3>
-        <p>国立大学理系学部に在籍し、塾講師歴3年。筋道の立った解説と、「わからない」を置き去りにしない指導を心がけています。</p>
-        <div class="teacher-row">
-          <div class="teacher-avatar">先生</div>
-          <div class="teacher-meta">
-            <strong>担当講師</strong>
-            国立理系大学生 ／ 塾講師歴3年<br>理系ならではの論理的な解説が得意です
-          </div>
+        <div class="service-card">
+          <a href="service.html#ai">
+            <div class="service-num">03</div>
+            <h3>学習AIサポート</h3>
+            <p>進捗を分析し、次にやるべきことを提案します。</p>
+          </a>
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- PRICING -->
-  <section class="pricing" id="pricing">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="kicker">Pricing</span>
-        <h2>料金プラン</h2>
-        <p>まずは無料で、soLViaの自習室を体験してください。</p>
-      </div>
-
-      <div class="price-grid">
-        <div class="price-card featured reveal">
-          <span class="price-tag">🔥 期間限定</span>
-          <h3>夏休み無料開放プラン</h3>
-          <div class="price-num">¥0<small>／ 夏休み期間中</small></div>
-          <p>夏休みの間、soLViaの自習室は無料でご利用いただけます。まずは気軽に参加して、続けやすさを体感してください。</p>
-          <ul>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Zoom自習室への参加は自由</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>質問はその場でプライベートルームへ</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>お申し込みはGoogleフォームのみ</li>
-          </ul>
-        </div>
-        <div class="price-card plain reveal">
-          <span class="price-tag">通常プラン</span>
-          <h3>準備中</h3>
-          <p>夏休み以降の通常料金プランは、現在準備を進めています。詳細が決まり次第、こちらのページでお知らせしますので、もうしばらくお待ちください。</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="kicker">Entry</span>
-        <h2>お申し込み・お問い合わせ</h2>
-        <p>下のフォームに必要事項を入力して送信してください。夏休み期間中は無料でご参加いただけます。</p>
-      </div>
-
-      <div class="contact-panel reveal">
-        <div class="form-frame-wrap">
-          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdGCJvpTZvOcqr467q6lguzJD1uQNOBoQ3KzpVBr1vtV3Fjug/viewform?embedded=true" title="soLVia お申し込みフォーム">読み込んでいます…</iframe>
-        </div>
-        <p class="contact-alt">フォームが表示されない場合は<a href="https://docs.google.com/forms/d/e/1FAIpQLSdGCJvpTZvOcqr467q6lguzJD1uQNOBoQ3KzpVBr1vtV3Fjug/viewform" target="_blank" rel="noopener">こちらから新しいタブで開く</a></p>
-      </div>
-    </div>
-  </section>
-
+  </div>
 </main>
 
 <footer>
-  <div class="wrap footer-inner">
-    <img src="assets/logo_transparent.png" alt="soLVia ロゴ">
-    <p>© 2026 soLVia All Rights Reserved.</p>
+  <div class="wrap">
+    <img src="assets/logo.JPG" alt="soLVia ロゴ">
+    <div>© 2026 soLVia. All Rights Reserved.</div>
   </div>
 </footer>
 
-<script>
-  // Progressive enhancement only: content is visible by default (see .reveal rule).
-  // Only switch to the animated scroll-reveal mode once we're sure IntersectionObserver
-  // can drive it, so nothing ever depends on JS to become visible.
-  if('IntersectionObserver' in window){
-    document.documentElement.classList.add('js-ready');
-    const revealEls = document.querySelectorAll('.reveal');
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting){
-          e.target.classList.add('in');
-          io.unobserve(e.target);
-        }
-      });
-    },{threshold:0.12});
-    revealEls.forEach(el=>io.observe(el));
-  }
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
-
