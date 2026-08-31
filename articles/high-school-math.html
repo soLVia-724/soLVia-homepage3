@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>高校生の数学勉強法｜成績を伸ばす5つのポイント｜soLVia</title>
+
+<meta name="description" content="高校数学の成績を伸ばしたい高校生向けに、数学の勉強法を5つのポイントに分けて解説します。基礎の理解、典型問題の演習、間違いの復習、分からない問題への向き合い方など、今日から実践できる勉強法を紹介します。">
+
+<link rel="icon" href="../assets/logo.JPG">
+
+<link rel="canonical" href="https://solvia-724.github.io/soLVia-homepage3/articles/high-school-math.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@500;700&family=Noto+Serif+JP:wght@500;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Space+Mono&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  color: #333;
+  background: #f8f7f3;
+  line-height: 1.9;
+}
+
+header {
+  background: #fff;
+  border-bottom: 1px solid #e8e5dc;
+}
+
+.nav-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+}
+
+.brand img {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.brand-text {
+  font-family: "Noto Serif JP", serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 28px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #444;
+  font-size: 14px;
+}
+
+.article-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 50px 24px 80px;
+}
+
+.breadcrumb {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 35px;
+}
+
+.breadcrumb a {
+  color: #777;
+  text-decoration: none;
+}
+
+.article-eyebrow {
+  font-family: "Space Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #b08b4f;
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-family: "Noto Serif JP", serif;
+  font-size: 38px;
+  line-height: 1.5;
+  margin: 0 0 30px;
+  color: #222;
+}
+
+.intro {
+  background: #fff;
+  padding: 28px 32px;
+  border-left: 3px solid #c9a86a;
+  margin-bottom: 55px;
+}
+
+article h2 {
+  font-family: "Noto Serif JP", serif;
+  font-size: 27px;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd6c8;
+  color: #292929;
+}
+
+article h3 {
+  font-size: 20px;
+  margin-top: 35px;
+  color: #333;
+}
+
+article p {
+  font-size: 16px;
+  margin: 0 0 20px;
+}
+
+article ul,
+article ol {
+  background: #fff;
+  padding: 25px 35px;
+  margin: 25px 0;
+}
+
+article li {
+  margin-bottom: 8px;
+}
+
+.point-box {
+  background: #fff;
+  padding: 25px 30px;
+  margin: 30px 0;
+  border: 1px solid #e5dfd3;
+}
+
+.point-box strong {
+  color: #9b773e;
+}
+
+.summary {
+  background: #fff;
+  padding: 30px;
+  margin-top: 40px;
+}
+
+.cta {
+  background: #f0eadf;
+  padding: 40px 30px;
+  margin-top: 70px;
+  text-align: center;
+}
+
+.cta h2 {
+  border: none;
+  margin-top: 0;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 13px 30px;
+  text-decoration: none;
+  border: 1px solid #333;
+  color: #333;
+  background: #fff;
+}
+
+.back-home {
+  text-align: center;
+  margin-top: 45px;
+}
+
+.back-home a {
+  color: #555;
+  text-decoration: none;
+}
+
+footer {
+  background: #242424;
+  color: #fff;
+  text-align: center;
+  padding: 35px 20px;
+  font-size: 13px;
+}
+
+footer img {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 700px) {
+
+  .nav-wrap {
+    padding: 15px 18px;
+  }
+
+  nav ul {
+    gap: 12px;
+  }
+
+  nav a {
+    font-size: 11px;
+  }
+
+  .article-wrap {
+    padding: 35px 18px 60px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  article h2 {
+    font-size: 23px;
+  }
+
+  article p {
+    font-size: 15px;
+  }
+
+  .intro,
+  .point-box,
+  .summary,
+  .cta {
+    padding: 22px;
+  }
+
+  article ul,
+  article ol {
+    padding: 20px 25px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+  <div class="nav-wrap">
+
+    <a href="../index.html" class="brand">
+      <img src="../assets/logo.JPG" alt="soLVia ロゴ">
+      <span class="brand-text">soLVia</span>
+    </a>
+
+    <nav>
+      <ul>
+        <li><a href="../index.html">ホーム</a></li>
+        <li><a href="../service.html">サービス内容</a></li>
+        <li><a href="../price.html">料金</a></li>
+        <li><a href="../contact.html">お問い合わせ</a></li>
+      </ul>
+    </nav>
+
+  </div>
+
+</header>
+
+
+<main>
+
+<div class="article-wrap">
+
+  <div class="breadcrumb">
+    <a href="../index.html">ホーム</a>
+    ｜
+    <a href="../index.html">勉強お役立ち記事</a>
+    ｜
+    高校生の数学勉強法
+  </div>
+
+
+  <article>
+
+    <div class="article-eyebrow">
+      STUDY TIPS
+    </div>
+
+
+    <h1>
+      高校生の数学勉強法｜成績を伸ばす5つのポイント
+    </h1>
+
+
+    <div class="intro">
+
+      <p>
+        「高校数学が急に難しくなった」
+      </p>
+
+      <p>
+        「授業は聞いているけれど、問題になると解けない」
+      </p>
+
+      <p>
+        「数学を勉強しているのに、テストの点数が上がらない」
+      </p>
+
+      <p>
+        高校生になると、中学校までの数学と比べて扱う内容が増え、
+        問題の難易度も高くなります。
+      </p>
+
+      <p>
+        そのため、「とにかく問題をたくさん解く」だけではなく、
+        <strong>数学の勉強方法そのものを見直すこと</strong>
+        が大切です。
+      </p>
+
+      <p>
+        この記事では、高校数学の成績を伸ばすために意識したい
+        5つのポイントを紹介します。
+      </p>
+
+    </div>
+
+
+    <h2>高校数学で大切なのは「理解→演習→復習」</h2>
+
+    <p>
+      高校数学では、公式や解法を覚えるだけではなく、
+      「なぜその公式を使うのか」
+      「なぜこの解き方になるのか」
+      を理解することが重要です。
+    </p>
+
+    <p>
+      基本的な流れとしては、
+    </p>
+
+    <div class="point-box">
+
+      <strong>理解 → 基本問題 → 典型問題 → 間違いの復習</strong>
+
+      <p>
+        という流れを意識して勉強してみましょう。
+      </p>
+
+    </div>
+
+
+    <h2>1. まずは教科書レベルの内容を理解する</h2>
+
+    <p>
+      難しい問題集にいきなり取り組む前に、
+      まずは教科書レベルの内容を理解しましょう。
+    </p>
+
+    <p>
+      特に確認したいのは、
+    </p>
+
+    <ul>
+
+      <li>公式の意味</li>
+
+      <li>公式の使い方</li>
+
+      <li>基本的な計算方法</li>
+
+      <li>例題の解き方</li>
+
+    </ul>
+
+    <p>
+      ここが曖昧なまま難しい問題に進むと、
+      「何を使えばいいのか分からない」
+      という状態になりやすくなります。
+    </p>
+
+    <p>
+      分からない部分があれば、一度立ち止まって、
+      教科書や授業ノートに戻ることも大切です。
+    </p>
+
+
+    <h2>2. 公式を覚えるだけで終わらせない</h2>
+
+    <p>
+      数学では公式を覚えることも必要ですが、
+      公式を暗記しただけでは問題を解けないことがあります。
+    </p>
+
+    <p>
+      例えば、公式を見たときに、
+    </p>
+
+    <ul>
+
+      <li>どんな問題で使うのか</li>
+
+      <li>どの数字を公式に入れるのか</li>
+
+      <li>なぜその公式を使うのか</li>
+
+    </ul>
+
+    <p>
+      まで考えてみましょう。
+    </p>
+
+    <p>
+      「公式を知っている」状態から、
+      <strong>「公式を使える」状態</strong>
+      にすることが重要です。
+    </p>
+
+
+    <h2>3. 典型問題を繰り返し解く</h2>
+
+    <p>
+      高校数学では、同じような考え方を使う問題が
+      形を変えて出題されることがあります。
+    </p>
+
+    <p>
+      そのため、基本的な問題や典型問題を繰り返し解き、
+      解き方のパターンを身につけることが大切です。
+    </p>
+
+    <div class="point-box">
+
+      <strong>おすすめの進め方</strong>
+
+      <p>
+        ① まず自分で解く<br>
+        ② 答え合わせをする<br>
+        ③ 間違えた原因を確認する<br>
+        ④ もう一度、自力で解く
+      </p>
+
+    </div>
+
+    <p>
+      一度解説を読んで「分かった」と思っても、
+      自分で解けるとは限りません。
+    </p>
+
+    <p>
+      解説を閉じた状態でもう一度解いてみることが、
+      理解の定着につながります。
+    </p>
+
+
+    <h2>4. 間違えた問題をそのままにしない</h2>
+
+    <p>
+      数学の勉強では、
+      「何問解いたか」だけでなく、
+      <strong>「間違えた問題をどう復習したか」</strong>
+      が重要です。
+    </p>
+
+    <p>
+      間違えた問題について、
+      なぜ間違えたのかを考えてみましょう。
+    </p>
+
+    <ul>
+
+      <li>計算ミスだった</li>
+
+      <li>公式を間違えた</li>
+
+      <li>問題文の意味を理解できていなかった</li>
+
+      <li>解き方が思いつかなかった</li>
+
+      <li>途中まではできたが、その先が分からなかった</li>
+
+    </ul>
+
+    <p>
+      原因が分かれば、次に同じ問題で間違える可能性を減らせます。
+    </p>
+
+
+    <h2>5. 分からない問題は早めに質問する</h2>
+
+    <p>
+      高校数学では、一つの単元の理解が次の内容につながっていることがあります。
+    </p>
+
+    <p>
+      そのため、
+      「分からないけれど、とりあえず先に進もう」
+      としていると、後からさらに分からなくなることがあります。
+    </p>
+
+    <p>
+      分からない問題があったら、
+      <strong>どこまで理解できていて、どこから分からないのか</strong>
+      を整理してみましょう。
+    </p>
+
+    <div class="point-box">
+
+      <strong>例えば：</strong>
+
+      <p>
+        「この公式を使うことは分かるけれど、
+        その後の式変形が分からない」
+      </p>
+
+      <p>
+        「解説を読んだけれど、
+        なぜこの式を作るのか分からない」
+      </p>
+
+    </div>
+
+    <p>
+      このように具体的に質問すると、
+      自分の理解できていない部分も明確になります。
+    </p>
+
+
+    <h2>数学の勉強時間より「勉強のやり方」を見直そう</h2>
+
+    <p>
+      数学の成績を上げるためには、
+      単純に勉強時間を増やすだけではなく、
+      その時間をどのように使うかが大切です。
+    </p>
+
+    <p>
+      例えば、3時間問題を解き続けるよりも、
+      間違えた問題を丁寧に復習して、
+      もう一度自力で解けるようにすることが
+      効果的な場合があります。
+    </p>
+
+    <p>
+      「たくさん解く」だけではなく、
+      <strong>「理解して、自分で解けるようにする」</strong>
+      ことを意識しましょう。
+    </p>
+
+
+    <h2>高校数学の勉強法まとめ</h2>
+
+    <div class="summary">
+
+      <ol>
+
+        <li>
+          <strong>教科書レベルの内容を理解する</strong>
+        </li>
+
+        <li>
+          <strong>公式を覚えるだけで終わらせない</strong>
+        </li>
+
+        <li>
+          <strong>基本問題・典型問題を繰り返す</strong>
+        </li>
+
+        <li>
+          <strong>間違えた問題を復習する</strong>
+        </li>
+
+        <li>
+          <strong>分からない問題を早めに質問する</strong>
+        </li>
+
+      </ol>
+
+      <p>
+        高校数学は、分からないところをそのままにしないことが重要です。
+        小さな疑問を一つずつ解決しながら、
+        「自分で解ける問題」を増やしていきましょう。
+      </p>
+
+    </div>
+
+
+    <div class="cta">
+
+      <h2>
+        高校数学で分からない問題が出てきたら
+      </h2>
+
+      <p>
+        自宅で数学を勉強していると、
+        「解説を読んでも分からない」
+        「途中までは分かるけれど、その先が分からない」
+        ということがあります。
+      </p>
+
+      <p>
+        soLViaでは、中学生・高校生を対象に、
+        オンライン授業と個別の学習サポートを行っています。
+      </p>
+
+      <p>
+        分からない問題が出てきたら講師に質問し、
+        Zoomで1対1の個別解説を受けることができます。
+      </p>
+
+      <p>
+        さらに、その解説を
+        <strong>自分専用の解説動画</strong>
+        として残すことで、
+        後から何度でも復習できます。
+      </p>
+
+      <a href="../contact.html" class="btn">
+        無料体験はこちら
+      </a>
+
+    </div>
+
+
+    <div class="back-home">
+
+      <a href="../index.html">
+        ← soLViaトップページへ戻る
+      </a>
+
+    </div>
+
+  </article>
+
+</div>
+
+</main>
+
+
+<footer>
+
+  <img src="../assets/logo.JPG" alt="soLVia ロゴ">
+
+  <div>
+    © 2026 soLVia. All Rights Reserved.
+  </div>
+
+</footer>
+
+
+</body>
+</html>
