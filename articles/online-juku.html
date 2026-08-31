@@ -1,0 +1,726 @@
+```html
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>オンライン塾のメリット・デメリット｜向いている人とは？｜soLVia</title>
+
+<meta name="description" content="オンライン塾のメリット・デメリットを中学生・高校生向けに分かりやすく解説します。オンライン授業の特徴や、向いている人・向いていない人、自宅学習で困ったときの対策について紹介します。">
+
+<link rel="icon" href="../assets/logo.JPG">
+
+<link rel="canonical" href="https://solvia-724.github.io/soLVia-homepage3/articles/online-juku.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@500;700&family=Noto+Serif+JP:wght@500;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Space+Mono&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  color: #333;
+  background: #f8f7f3;
+  line-height: 1.9;
+}
+
+header {
+  background: #fff;
+  border-bottom: 1px solid #e8e5dc;
+}
+
+.nav-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+}
+
+.brand img {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.brand-text {
+  font-family: "Noto Serif JP", serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 28px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #444;
+  font-size: 14px;
+}
+
+.article-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 50px 24px 80px;
+}
+
+.breadcrumb {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 35px;
+}
+
+.breadcrumb a {
+  color: #777;
+  text-decoration: none;
+}
+
+.article-eyebrow {
+  font-family: "Space Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #b08b4f;
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-family: "Noto Serif JP", serif;
+  font-size: 38px;
+  line-height: 1.5;
+  margin: 0 0 30px;
+  color: #222;
+}
+
+.intro {
+  background: #fff;
+  padding: 28px 32px;
+  border-left: 3px solid #c9a86a;
+  margin-bottom: 55px;
+}
+
+article h2 {
+  font-family: "Noto Serif JP", serif;
+  font-size: 27px;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd6c8;
+  color: #292929;
+}
+
+article h3 {
+  font-size: 20px;
+  margin-top: 35px;
+  color: #333;
+}
+
+article p {
+  font-size: 16px;
+  margin: 0 0 20px;
+}
+
+article ul,
+article ol {
+  background: #fff;
+  padding: 25px 35px;
+  margin: 25px 0;
+}
+
+article li {
+  margin-bottom: 8px;
+}
+
+.point-box {
+  background: #fff;
+  padding: 25px 30px;
+  margin: 30px 0;
+  border: 1px solid #e5dfd3;
+}
+
+.point-box strong {
+  color: #9b773e;
+}
+
+.pros-cons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.pros,
+.cons {
+  background: #fff;
+  padding: 25px;
+  border: 1px solid #e5dfd3;
+}
+
+.pros h3,
+.cons h3 {
+  margin-top: 0;
+}
+
+.summary {
+  background: #fff;
+  padding: 30px;
+  margin-top: 40px;
+}
+
+.cta {
+  background: #f0eadf;
+  padding: 40px 30px;
+  margin-top: 70px;
+  text-align: center;
+}
+
+.cta h2 {
+  border: none;
+  margin-top: 0;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 13px 30px;
+  text-decoration: none;
+  border: 1px solid #333;
+  color: #333;
+  background: #fff;
+}
+
+.back-home {
+  text-align: center;
+  margin-top: 45px;
+}
+
+.back-home a {
+  color: #555;
+  text-decoration: none;
+}
+
+footer {
+  background: #242424;
+  color: #fff;
+  text-align: center;
+  padding: 35px 20px;
+  font-size: 13px;
+}
+
+footer img {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 700px) {
+
+  .nav-wrap {
+    padding: 15px 18px;
+  }
+
+  nav ul {
+    gap: 12px;
+  }
+
+  nav a {
+    font-size: 11px;
+  }
+
+  .article-wrap {
+    padding: 35px 18px 60px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  article h2 {
+    font-size: 23px;
+  }
+
+  article p {
+    font-size: 15px;
+  }
+
+  .intro,
+  .point-box,
+  .summary,
+  .cta {
+    padding: 22px;
+  }
+
+  article ul,
+  article ol {
+    padding: 20px 25px;
+  }
+
+  .pros-cons {
+    grid-template-columns: 1fr;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+  <div class="nav-wrap">
+
+    <a href="../index.html" class="brand">
+      <img src="../assets/logo.JPG" alt="soLVia ロゴ">
+      <span class="brand-text">soLVia</span>
+    </a>
+
+    <nav>
+      <ul>
+        <li><a href="../index.html">ホーム</a></li>
+        <li><a href="../service.html">サービス内容</a></li>
+        <li><a href="../price.html">料金</a></li>
+        <li><a href="../contact.html">お問い合わせ</a></li>
+      </ul>
+    </nav>
+
+  </div>
+
+</header>
+
+
+<main>
+
+<div class="article-wrap">
+
+  <div class="breadcrumb">
+
+    <a href="../index.html">ホーム</a>
+    ｜
+    <a href="../index.html">勉強お役立ち記事</a>
+    ｜
+    オンライン塾のメリット・デメリット
+
+  </div>
+
+
+  <article>
+
+    <div class="article-eyebrow">
+      STUDY TIPS
+    </div>
+
+
+    <h1>
+      オンライン塾のメリット・デメリット｜向いている人とは？
+    </h1>
+
+
+    <div class="intro">
+
+      <p>
+        「オンライン塾って実際どうなんだろう？」
+      </p>
+
+      <p>
+        「普通の塾と比べて何が違うの？」
+      </p>
+
+      <p>
+        「自宅で授業を受けて、本当に勉強できるの？」
+      </p>
+
+      <p>
+        オンライン塾を検討している中学生・高校生や保護者の方は、
+        このような疑問を持つこともあると思います。
+      </p>
+
+      <p>
+        オンライン塾には、自宅で学習できるという大きなメリットがある一方で、
+        自分で学習環境を整える必要があるなどの注意点もあります。
+      </p>
+
+      <p>
+        この記事では、オンライン塾のメリット・デメリットを整理し、
+        どのような人に向いているのかを分かりやすく紹介します。
+      </p>
+
+    </div>
+
+
+    <h2>オンライン塾とは？</h2>
+
+    <p>
+      オンライン塾とは、インターネットを利用して
+      自宅などから授業や学習サポートを受ける塾のことです。
+    </p>
+
+    <p>
+      パソコンやタブレット、スマートフォンなどを利用して、
+      講師による授業を受けたり、質問をしたりします。
+    </p>
+
+    <p>
+      サービスによって授業形式やサポート内容は異なるため、
+      「オンライン塾」といっても学習スタイルはさまざまです。
+    </p>
+
+
+    <h2>オンライン塾のメリット</h2>
+
+
+    <h3>1. 自宅で授業を受けられる</h3>
+
+    <p>
+      大きなメリットの一つは、
+      自宅から授業を受けられることです。
+    </p>
+
+    <p>
+      塾まで移動する必要がないため、
+      移動時間を勉強や休憩に使うことができます。
+    </p>
+
+    <p>
+      特に部活動や学校行事などで忙しい高校生にとっては、
+      自宅で学習できることがメリットになる場合があります。
+    </p>
+
+
+    <h3>2. 場所を選ばず学習できる</h3>
+
+    <p>
+      インターネット環境があれば、
+      自宅などから授業を受けられます。
+    </p>
+
+    <p>
+      「塾まで通うのが大変」という人にとって、
+      オンラインという選択肢は便利です。
+    </p>
+
+
+    <h3>3. 個別指導を受けられるサービスもある</h3>
+
+    <p>
+      オンライン塾の中には、
+      講師と1対1で授業や質問対応を行うサービスもあります。
+    </p>
+
+    <p>
+      自分が分からない部分について質問しやすく、
+      自分の理解度に合わせた学習ができる場合があります。
+    </p>
+
+
+    <h3>4. 学習記録や動画を復習に活用できる場合がある</h3>
+
+    <p>
+      オンラインサービスによっては、
+      授業動画や学習記録などを後から確認できる場合があります。
+    </p>
+
+    <p>
+      「一度聞いただけでは覚えられない」という人にとって、
+      復習できる仕組みがあることは大きなメリットになります。
+    </p>
+
+
+    <h2>オンライン塾のデメリット</h2>
+
+
+    <h3>1. 自宅だと集中できない場合がある</h3>
+
+    <p>
+      オンライン塾では自宅で授業を受けるため、
+      スマートフォンやゲーム、テレビなどの誘惑があります。
+    </p>
+
+    <p>
+      「家ではなかなか勉強モードになれない」という人は、
+      学習する場所や時間を決めるなどの工夫が必要です。
+    </p>
+
+
+    <h3>2. 分からない問題をすぐに質問できない場合がある</h3>
+
+    <p>
+      オンライン塾によっては、
+      授業以外の質問に対応していない場合があります。
+    </p>
+
+    <p>
+      自宅学習では授業よりも、
+      「問題を解いていて分からなくなったときにどうするか」
+      が重要になることがあります。
+    </p>
+
+    <div class="point-box">
+
+      <strong>オンライン塾を選ぶときは、授業内容だけでなく質問サポートも確認しましょう。</strong>
+
+      <p>
+        「授業は分かりやすいけれど、
+        自習中に分からない問題を質問できない」
+        というケースもあります。
+      </p>
+
+    </div>
+
+
+    <h3>3. 学習を自分で進める力が必要</h3>
+
+    <p>
+      オンライン塾では、
+      自分でパソコンや教材を準備したり、
+      授業以外の時間に学習したりする必要があります。
+    </p>
+
+    <p>
+      そのため、
+      「授業を受ければ勉強が全部終わる」
+      と考えるのではなく、
+      授業以外の自習時間も大切にする必要があります。
+    </p>
+
+
+    <h2>オンライン塾のメリット・デメリットまとめ</h2>
+
+    <div class="pros-cons">
+
+      <div class="pros">
+
+        <h3>メリット</h3>
+
+        <ul>
+
+          <li>自宅で授業を受けられる</li>
+
+          <li>移動時間を減らせる</li>
+
+          <li>場所を選ばず学習できる</li>
+
+          <li>個別指導を受けられるサービスがある</li>
+
+          <li>動画などを復習に活用できる場合がある</li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="cons">
+
+        <h3>デメリット</h3>
+
+        <ul>
+
+          <li>自宅では集中しにくい場合がある</li>
+
+          <li>質問サポートが少ないサービスもある</li>
+
+          <li>自分で学習を進める必要がある</li>
+
+          <li>インターネット環境が必要</li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+
+    <h2>オンライン塾が向いている人</h2>
+
+    <p>
+      オンライン塾は、特に次のような人に向いていると考えられます。
+    </p>
+
+    <ul>
+
+      <li>自宅で効率よく勉強したい人</li>
+
+      <li>塾への移動時間を減らしたい人</li>
+
+      <li>自分のペースで学習したい人</li>
+
+      <li>オンラインで講師に質問したい人</li>
+
+      <li>学校や部活動などで忙しい人</li>
+
+    </ul>
+
+
+    <h2>オンライン塾を選ぶときに確認したいこと</h2>
+
+    <p>
+      オンライン塾を選ぶときは、
+      料金だけで決めるのではなく、
+      自分が必要としているサポートがあるか確認しましょう。
+    </p>
+
+    <ol>
+
+      <li>
+        <strong>授業形式</strong>
+        <br>
+        集団授業なのか、個別指導なのかを確認する。
+      </li>
+
+      <li>
+        <strong>質問対応</strong>
+        <br>
+        授業以外で分からない問題を質問できるか確認する。
+      </li>
+
+      <li>
+        <strong>復習の仕組み</strong>
+        <br>
+        授業内容を後から復習できるか確認する。
+      </li>
+
+      <li>
+        <strong>料金</strong>
+        <br>
+        月額料金だけでなく、追加料金なども確認する。
+      </li>
+
+      <li>
+        <strong>自分に合った学習スタイルか</strong>
+        <br>
+        自宅で学習することが自分に合っているか考える。
+      </li>
+
+    </ol>
+
+
+    <h2>オンライン塾は「授業を受けるだけ」ではない</h2>
+
+    <p>
+      オンライン塾を選ぶときに大切なのは、
+      「どんな授業を受けられるか」だけではありません。
+    </p>
+
+    <p>
+      自宅学習では、
+      <strong>授業で理解する → 自分で問題を解く → 分からないところを質問する → 復習する</strong>
+      という流れを作れるかどうかも重要です。
+    </p>
+
+    <p>
+      特に、問題を解いている途中で分からなくなったときに、
+      そのままにせず質問できる環境があると、
+      自宅学習を進めやすくなります。
+    </p>
+
+
+    <h2>soLViaでは自宅学習中の「分からない」をサポート</h2>
+
+    <p>
+      soLViaでは、中学生・高校生を対象に、
+      オンライン授業と個別の学習サポートを行っています。
+    </p>
+
+    <p>
+      独自教材を使ったオンライン授業で学習内容を理解し、
+      自宅で問題演習を行います。
+    </p>
+
+    <p>
+      そして、分からない問題が出てきたら講師に質問。
+      Zoomで1対1の個別解説を行います。
+    </p>
+
+    <p>
+      さらに、その解説を
+      <strong>自分専用の解説動画</strong>
+      として残します。
+    </p>
+
+    <p>
+      一度聞いて終わりではなく、
+      後から何度でも見返して復習できることが、
+      soLViaの特徴です。
+    </p>
+
+
+    <div class="cta">
+
+      <h2>
+        オンライン学習を試してみたい方へ
+      </h2>
+
+      <p>
+        「自宅で勉強したいけれど、
+        分からない問題を一人で解決できない」
+        という方は、soLViaを試してみてください。
+      </p>
+
+      <p>
+        オンライン授業と1対1の個別解説、
+        さらに自分専用の解説動画で、
+        自宅での学習をサポートします。
+      </p>
+
+      <a href="../contact.html" class="btn">
+        無料体験はこちら
+      </a>
+
+    </div>
+
+
+    <div class="back-home">
+
+      <a href="../index.html">
+        ← soLViaトップページへ戻る
+      </a>
+
+    </div>
+
+  </article>
+
+</div>
+
+</main>
+
+
+<footer>
+
+  <img src="../assets/logo.JPG" alt="soLVia ロゴ">
+
+  <div>
+    © 2026 soLVia. All Rights Reserved.
+  </div>
+
+</footer>
+
+
+</body>
+</html>
+```
