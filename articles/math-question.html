@@ -1,0 +1,626 @@
+```html
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>数学の問題が分からないときの勉強法｜5つの対処法を解説｜soLVia</title>
+
+<meta name="description" content="数学の問題が分からないときにどうすればいい？問題文の読み方、途中式の確認、解説の使い方、質問の仕方など、数学の問題でつまずいたときの具体的な勉強法を中学生・高校生向けに解説します。">
+
+<link rel="icon" href="../assets/logo.JPG">
+
+<link rel="canonical" href="https://solvia-724.github.io/soLVia-homepage3/articles/math-question.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@500;700&family=Noto+Serif+JP:wght@500;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Space+Mono&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  color: #333;
+  background: #f8f7f3;
+  line-height: 1.9;
+}
+
+header {
+  background: #fff;
+  border-bottom: 1px solid #e8e5dc;
+}
+
+.nav-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+}
+
+.brand img {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.brand-text {
+  font-family: "Noto Serif JP", serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 28px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #444;
+  font-size: 14px;
+}
+
+.article-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 50px 24px 80px;
+}
+
+.breadcrumb {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 35px;
+}
+
+.breadcrumb a {
+  color: #777;
+  text-decoration: none;
+}
+
+.article-eyebrow {
+  font-family: "Space Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #b08b4f;
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-family: "Noto Serif JP", serif;
+  font-size: 38px;
+  line-height: 1.5;
+  margin: 0 0 30px;
+  color: #222;
+}
+
+.intro {
+  background: #fff;
+  padding: 28px 32px;
+  border-left: 3px solid #c9a86a;
+  margin-bottom: 55px;
+}
+
+article h2 {
+  font-family: "Noto Serif JP", serif;
+  font-size: 27px;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd6c8;
+  color: #292929;
+}
+
+article h3 {
+  font-size: 20px;
+  margin-top: 35px;
+  color: #333;
+}
+
+article p {
+  font-size: 16px;
+  margin: 0 0 20px;
+}
+
+article ul,
+article ol {
+  background: #fff;
+  padding: 25px 35px;
+  margin: 25px 0;
+}
+
+article li {
+  margin-bottom: 8px;
+}
+
+.point-box {
+  background: #fff;
+  padding: 25px 30px;
+  margin: 30px 0;
+  border: 1px solid #e5dfd3;
+}
+
+.point-box strong {
+  color: #9b773e;
+}
+
+.summary {
+  background: #fff;
+  padding: 30px;
+  margin-top: 40px;
+}
+
+.cta {
+  background: #f0eadf;
+  padding: 40px 30px;
+  margin-top: 70px;
+  text-align: center;
+}
+
+.cta h2 {
+  border: none;
+  margin-top: 0;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 13px 30px;
+  text-decoration: none;
+  border: 1px solid #333;
+  color: #333;
+  background: #fff;
+}
+
+.back-home {
+  text-align: center;
+  margin-top: 45px;
+}
+
+.back-home a {
+  color: #555;
+  text-decoration: none;
+}
+
+footer {
+  background: #242424;
+  color: #fff;
+  text-align: center;
+  padding: 35px 20px;
+  font-size: 13px;
+}
+
+footer img {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 700px) {
+
+  .nav-wrap {
+    padding: 15px 18px;
+  }
+
+  nav ul {
+    gap: 12px;
+  }
+
+  nav a {
+    font-size: 11px;
+  }
+
+  .article-wrap {
+    padding: 35px 18px 60px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  article h2 {
+    font-size: 23px;
+  }
+
+  article p {
+    font-size: 15px;
+  }
+
+  .intro,
+  .point-box,
+  .summary,
+  .cta {
+    padding: 22px;
+  }
+
+  article ul,
+  article ol {
+    padding: 20px 25px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+  <div class="nav-wrap">
+
+    <a href="../index.html" class="brand">
+      <img src="../assets/logo.JPG" alt="soLVia ロゴ">
+      <span class="brand-text">soLVia</span>
+    </a>
+
+    <nav>
+      <ul>
+        <li><a href="../index.html">ホーム</a></li>
+        <li><a href="../service.html">サービス内容</a></li>
+        <li><a href="../price.html">料金</a></li>
+        <li><a href="../contact.html">お問い合わせ</a></li>
+      </ul>
+    </nav>
+
+  </div>
+
+</header>
+
+
+<main>
+
+<div class="article-wrap">
+
+  <div class="breadcrumb">
+    <a href="../index.html">ホーム</a>
+    ｜
+    <a href="../index.html">勉強お役立ち記事</a>
+    ｜
+    数学の問題が分からないときの勉強法
+  </div>
+
+
+  <article>
+
+    <div class="article-eyebrow">
+      STUDY TIPS
+    </div>
+
+
+    <h1>
+      数学の問題が分からないときの勉強法｜5つの対処法を解説
+    </h1>
+
+
+    <div class="intro">
+
+      <p>
+        「数学の問題を解いているけど、途中から分からなくなった」
+      </p>
+
+      <p>
+        「解説を読んでも、なぜその式になるのか分からない」
+      </p>
+
+      <p>
+        「分からない問題があると、そこで勉強が止まってしまう」
+      </p>
+
+      <p>
+        数学を勉強していると、このような経験をすることがあります。
+      </p>
+
+      <p>
+        しかし、分からない問題が出てきたこと自体は悪いことではありません。
+        むしろ、<strong>「どこが分からないのか」を見つけることが、数学を理解する第一歩</strong>です。
+      </p>
+
+      <p>
+        この記事では、数学の問題が分からないときに、
+        どのように考えればよいのか、具体的な勉強法を紹介します。
+      </p>
+
+    </div>
+
+
+    <h2>1. まず「どこまで分かっているか」を確認する</h2>
+
+    <p>
+      問題が解けないとき、最初から全部分からないとは限りません。
+    </p>
+
+    <p>
+      例えば、
+    </p>
+
+    <ul>
+      <li>問題文の意味は分かる</li>
+      <li>使う公式は分かる</li>
+      <li>途中までは計算できる</li>
+      <li>最後の計算だけ分からない</li>
+    </ul>
+
+    <p>
+      というように、「分かっているところ」と「分からないところ」があります。
+    </p>
+
+    <div class="point-box">
+      <strong>まずは「どこから分からなくなったのか」を見つけましょう。</strong>
+    </div>
+
+    <p>
+      これが分かるだけでも、質問するときに相手へ自分の状況を伝えやすくなります。
+    </p>
+
+
+    <h2>2. 問題文をもう一度ゆっくり読む</h2>
+
+    <p>
+      数学の問題が解けない原因の一つに、
+      問題文の条件を正しく読み取れていないことがあります。
+    </p>
+
+    <p>
+      特に文章問題では、
+      「何が分かっているのか」
+      「何を求めるのか」
+      を整理することが重要です。
+    </p>
+
+    <p>
+      問題文を読んだら、
+      数字や条件に印をつけたり、
+      図を書いたりしてみましょう。
+    </p>
+
+    <p>
+      頭の中だけで考えるのではなく、
+      <strong>問題文の情報を紙に書き出す</strong>ことで、
+      解き方が見えてくることがあります。
+    </p>
+
+
+    <h2>3. 教科書やノートを確認する</h2>
+
+    <p>
+      分からない問題が出たら、すぐに答えを見るのではなく、
+      まず学校の教科書やノートを確認してみましょう。
+    </p>
+
+    <p>
+      特に、
+    </p>
+
+    <ul>
+      <li>似たような例題</li>
+      <li>使えそうな公式</li>
+      <li>授業中に先生が説明していた内容</li>
+      <li>以前解いたことのある問題</li>
+    </ul>
+
+    <p>
+      を探してみると、ヒントが見つかることがあります。
+    </p>
+
+    <p>
+      「この問題は、以前勉強したどの内容と似ているのか？」
+      と考えることも大切です。
+    </p>
+
+
+    <h2>4. 解説を読んでも分からないときは、質問する</h2>
+
+    <p>
+      教科書や問題集の解説を読んでも、
+      「なぜこの式になるの？」と感じることがあります。
+    </p>
+
+    <p>
+      これは珍しいことではありません。
+      解説では、紙面の都合などから途中の考え方が省略されている場合もあります。
+    </p>
+
+    <p>
+      そんなときは、先生や友達、塾の講師などに質問してみましょう。
+    </p>
+
+    <div class="point-box">
+      <strong>
+        「答えを教えてください」ではなく、
+        「この部分から先が分かりません」と伝えると、
+        自分がどこでつまずいているのかも整理しやすくなります。
+      </strong>
+    </div>
+
+
+    <h2>5. 解説を聞いた後に、もう一度自分で解く</h2>
+
+    <p>
+      分からない問題を教えてもらったら、
+      「分かった！」と思って終わりにしないことが大切です。
+    </p>
+
+    <p>
+      解説を聞いた直後に、
+      <strong>何も見ずにもう一度自分で問題を解いてみましょう。</strong>
+    </p>
+
+    <p>
+      もし自分で解けたなら、
+      その問題について理解できた可能性が高いです。
+    </p>
+
+    <p>
+      逆に、もう一度解いてみて途中で止まってしまった場合は、
+      まだ理解できていない部分があるかもしれません。
+    </p>
+
+    <p>
+      その場合は、もう一度質問してみましょう。
+    </p>
+
+
+    <h2>「答えが分かる」と「問題が解ける」は違う</h2>
+
+    <p>
+      数学の勉強では、
+      解答を見て「なるほど」と思うだけでは十分ではありません。
+    </p>
+
+    <p>
+      大切なのは、
+      <strong>解答を見ずに、自分で同じ問題を解けるようになること</strong>です。
+    </p>
+
+    <p>
+      さらに、少し数字や条件が変わった問題でも解けるようになれば、
+      より深く理解できていると言えるでしょう。
+    </p>
+
+
+    <h2>分からない問題を放置しないことが大切</h2>
+
+    <p>
+      数学は、前に学習した内容が後の単元でも使われることがあります。
+    </p>
+
+    <p>
+      そのため、一つの分からない部分を放置したまま先へ進むと、
+      後からさらに難しく感じてしまうことがあります。
+    </p>
+
+    <p>
+      分からない問題が出たら、
+      「自分がどこまで分かっていて、どこから分からないのか」
+      を整理して、できるだけ早く解決することを意識しましょう。
+    </p>
+
+
+    <h2>数学の問題が分からないときの5ステップ</h2>
+
+    <div class="summary">
+
+      <ol>
+
+        <li>
+          <strong>どこまで分かっているか確認する</strong>
+        </li>
+
+        <li>
+          <strong>問題文をもう一度読む</strong>
+        </li>
+
+        <li>
+          <strong>教科書やノートを確認する</strong>
+        </li>
+
+        <li>
+          <strong>分からなければ質問する</strong>
+        </li>
+
+        <li>
+          <strong>解説後にもう一度自分で解く</strong>
+        </li>
+
+      </ol>
+
+      <p>
+        この5つを意識するだけでも、
+        「分からないから何もできない」という状態から、
+        「どこが分からないのかを整理して解決する」という勉強に変えることができます。
+      </p>
+
+    </div>
+
+
+    <div class="cta">
+
+      <h2>
+        分からない問題を、そのままにしないために
+      </h2>
+
+      <p>
+        soLViaでは、中学生・高校生を対象にオンライン授業を行っています。
+      </p>
+
+      <p>
+        また、自宅学習中に分からない問題が出てきた場合には、
+        講師に質問することができます。
+      </p>
+
+      <p>
+        Zoomで1対1の個別解説を行い、
+        その解説を<strong>自分専用の解説動画</strong>として残します。
+      </p>
+
+      <p>
+        「そのときは分かったけど、後からもう一度確認したい」
+        という場合にも、自分の解説動画を見返して復習できます。
+      </p>
+
+      <p>
+        分からない問題を一つずつ解決しながら、
+        自分で学習を進められる力を身につけていきましょう。
+      </p>
+
+      <a href="../contact.html" class="btn">
+        無料体験はこちら
+      </a>
+
+    </div>
+
+
+    <div class="back-home">
+
+      <a href="../index.html">
+        ← soLViaトップページへ戻る
+      </a>
+
+    </div>
+
+  </article>
+
+</div>
+
+</main>
+
+
+<footer>
+
+  <img src="../assets/logo.JPG" alt="soLVia ロゴ">
+
+  <div>
+    © 2026 soLVia. All Rights Reserved.
+  </div>
+
+</footer>
+
+
+</body>
+</html>
+```
