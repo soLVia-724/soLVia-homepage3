@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>中学生の数学勉強法｜成績を伸ばす5つのポイント｜soLVia</title>
+
+<meta name="description" content="中学生の数学の勉強法を解説。数学が苦手になる原因や、基本問題の解き方、間違えた問題の復習方法、分からない問題への対処法など、成績を伸ばすための具体的な勉強法を紹介します。">
+
+<link rel="icon" href="../assets/logo.JPG">
+
+<link rel="canonical" href="https://solvia-724.github.io/soLVia-homepage3/articles/junior-math.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@500;700&family=Noto+Serif+JP:wght@500;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Space+Mono&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  color: #333;
+  background: #f8f7f3;
+  line-height: 1.9;
+}
+
+header {
+  background: #fff;
+  border-bottom: 1px solid #e8e5dc;
+}
+
+.nav-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+}
+
+.brand img {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.brand-text {
+  font-family: "Noto Serif JP", serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 28px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #444;
+  font-size: 14px;
+}
+
+.article-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 50px 24px 80px;
+}
+
+.breadcrumb {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 35px;
+}
+
+.breadcrumb a {
+  color: #777;
+  text-decoration: none;
+}
+
+.article-eyebrow {
+  font-family: "Space Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #b08b4f;
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-family: "Noto Serif JP", serif;
+  font-size: 38px;
+  line-height: 1.5;
+  margin: 0 0 30px;
+  color: #222;
+}
+
+.intro {
+  background: #fff;
+  padding: 28px 32px;
+  border-left: 3px solid #c9a86a;
+  margin-bottom: 55px;
+}
+
+article h2 {
+  font-family: "Noto Serif JP", serif;
+  font-size: 27px;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd6c8;
+  color: #292929;
+}
+
+article h3 {
+  font-size: 20px;
+  margin-top: 35px;
+  color: #333;
+}
+
+article p {
+  font-size: 16px;
+  margin: 0 0 20px;
+}
+
+article ul {
+  background: #fff;
+  padding: 25px 35px;
+  margin: 25px 0;
+}
+
+article li {
+  margin-bottom: 8px;
+}
+
+.point-box {
+  background: #fff;
+  padding: 25px 30px;
+  margin: 30px 0;
+  border: 1px solid #e5dfd3;
+}
+
+.point-box strong {
+  color: #9b773e;
+}
+
+.summary {
+  background: #fff;
+  padding: 30px;
+  margin-top: 40px;
+}
+
+.cta {
+  background: #f0eadf;
+  padding: 40px 30px;
+  margin-top: 70px;
+  text-align: center;
+}
+
+.cta h2 {
+  border: none;
+  margin-top: 0;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 13px 30px;
+  text-decoration: none;
+  border: 1px solid #333;
+  color: #333;
+  background: #fff;
+}
+
+.back-home {
+  text-align: center;
+  margin-top: 45px;
+}
+
+.back-home a {
+  color: #555;
+  text-decoration: none;
+}
+
+footer {
+  background: #242424;
+  color: #fff;
+  text-align: center;
+  padding: 35px 20px;
+  font-size: 13px;
+}
+
+footer img {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 700px) {
+
+  .nav-wrap {
+    padding: 15px 18px;
+  }
+
+  nav ul {
+    gap: 12px;
+  }
+
+  nav a {
+    font-size: 11px;
+  }
+
+  .article-wrap {
+    padding: 35px 18px 60px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  article h2 {
+    font-size: 23px;
+  }
+
+  article p {
+    font-size: 15px;
+  }
+
+  .intro,
+  .point-box,
+  .summary,
+  .cta {
+    padding: 22px;
+  }
+
+  article ul {
+    padding: 20px 25px;
+  }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+  <div class="nav-wrap">
+
+    <a href="../index.html" class="brand">
+      <img src="../assets/logo.JPG" alt="soLVia ロゴ">
+      <span class="brand-text">soLVia</span>
+    </a>
+
+    <nav>
+      <ul>
+        <li><a href="../index.html">ホーム</a></li>
+        <li><a href="../service.html">サービス内容</a></li>
+        <li><a href="../price.html">料金</a></li>
+        <li><a href="../contact.html">お問い合わせ</a></li>
+      </ul>
+    </nav>
+
+  </div>
+
+</header>
+
+
+<main>
+
+<div class="article-wrap">
+
+  <div class="breadcrumb">
+    <a href="../index.html">ホーム</a>
+    ｜
+    中学生の数学勉強法
+  </div>
+
+  <article>
+
+    <div class="article-eyebrow">
+      STUDY TIPS
+    </div>
+
+    <h1>
+      中学生の数学勉強法｜成績を伸ばすために今日からできる5つのポイント
+    </h1>
+
+    <div class="intro">
+
+      <p>
+        「数学を勉強しているのに、なかなか成績が上がらない」
+      </p>
+
+      <p>
+        「問題集を解いているけど、テストになると解けない」
+      </p>
+
+      <p>
+        「分からない問題が出てくると、そのまま放置してしまう」
+      </p>
+
+      <p>
+        このような悩みを抱えている中学生も多いのではないでしょうか。
+      </p>
+
+      <p>
+        数学は、ただ問題をたくさん解けば成績が上がるというわけではありません。
+        <strong>「理解する → 解く → 間違える → 原因を確認する → もう一度解く」</strong>
+        というサイクルを繰り返すことが大切です。
+      </p>
+
+    </div>
+
+
+    <h2>1. まずは教科書の内容を理解する</h2>
+
+    <p>
+      数学が苦手な人ほど、いきなり難しい問題に取り組んでしまうことがあります。
+    </p>
+
+    <p>
+      しかし、基礎的な内容を理解していない状態で応用問題に取り組んでも、
+      なかなか解けるようにはなりません。
+    </p>
+
+    <p>
+      まずは学校の授業や教科書を使って、
+      「どのような公式を使うのか」
+      「なぜその公式を使うのか」
+      「どのような手順で解くのか」
+      を確認しましょう。
+    </p>
+
+    <div class="point-box">
+      <strong>ポイント：</strong>
+      教科書の例題を読むだけで終わらせず、一度教科書を閉じて自分の力で解いてみましょう。
+    </div>
+
+
+    <h2>2. 基本問題を繰り返し解く</h2>
+
+    <p>
+      数学の勉強では、難しい問題ばかりに取り組む必要はありません。
+      まずは基本問題を確実に解けるようにすることが重要です。
+    </p>
+
+    <p>
+      例えば、
+    </p>
+
+    <ul>
+      <li>教科書の例題を確認する</li>
+      <li>基本問題を解く</li>
+      <li>間違えた問題を確認する</li>
+      <li>もう一度解く</li>
+    </ul>
+
+    <p>
+      という流れで勉強してみましょう。
+    </p>
+
+    <p>
+      一度解けた問題でも、数日後にもう一度解いてみることで、
+      本当に理解できているか確認できます。
+    </p>
+
+
+    <h2>3. 間違えた問題をそのままにしない</h2>
+
+    <p>
+      数学の成績を伸ばすうえで、特に重要なのが「間違えた問題」です。
+    </p>
+
+    <p>
+      問題を間違えたとき、
+      「答えは○○だった」と確認するだけでは、
+      同じ間違いを繰り返してしまう可能性があります。
+    </p>
+
+    <p>
+      そこで、
+      <strong>「なぜ間違えたのか？」</strong>
+      を考えてみましょう。
+    </p>
+
+    <ul>
+      <li>計算ミスをした</li>
+      <li>公式を間違えた</li>
+      <li>問題文の意味を理解できなかった</li>
+      <li>途中までは分かったが、その先が分からなかった</li>
+      <li>どの公式を使えばいいか分からなかった</li>
+    </ul>
+
+    <p>
+      間違えた原因が分かれば、次に同じタイプの問題が出たときの対策ができます。
+    </p>
+
+
+    <h2>4. 分からない問題に時間をかけすぎない</h2>
+
+    <p>
+      数学では、どうしても分からない問題が出てくることがあります。
+      自分で考えることは大切ですが、1問に長時間悩み続けてしまうと、
+      勉強時間を効率よく使えなくなってしまいます。
+    </p>
+
+    <p>
+      例えば、
+    </p>
+
+    <ul>
+      <li>まずは自分で考える</li>
+      <li>教科書やノートを確認する</li>
+      <li>それでも分からなければ解説を見る</li>
+      <li>理解したら自分で解き直す</li>
+    </ul>
+
+    <p>
+      という流れを作っておくとよいでしょう。
+    </p>
+
+    <div class="point-box">
+      <strong>大切なのは、分からない問題を放置しないことです。</strong>
+    </div>
+
+
+    <h2>5. 分からない問題は質問して解決する</h2>
+
+    <p>
+      分からない問題を解決する方法は、いくつもあります。
+    </p>
+
+    <ul>
+      <li>学校の先生に質問する</li>
+      <li>友達に聞く</li>
+      <li>塾の先生に聞く</li>
+      <li>教科書や参考書の解説を読む</li>
+      <li>オンラインで質問する</li>
+    </ul>
+
+    <p>
+      最近ではAIを使って数学の問題を質問する方法もあります。
+      どの方法を使う場合でも重要なのは、
+      <strong>答えだけを知るのではなく、「なぜそうなるのか」を理解すること</strong>
+      です。
+    </p>
+
+
+    <h2>数学の勉強時間はどのくらい必要？</h2>
+
+    <p>
+      「数学は毎日何時間勉強すればいいの？」と疑問に思う人もいるかもしれません。
+    </p>
+
+    <p>
+      しかし、大切なのは単純な勉強時間だけではありません。
+    </p>
+
+    <p>
+      例えば30分間集中して、
+      基本問題を解き、間違えた問題を確認し、
+      分からない問題を質問して、もう一度解き直す。
+      このような勉強ができれば、ただ長時間机に座っているよりも有意義な時間になるでしょう。
+    </p>
+
+    <p>
+      まずは無理のない時間から始めて、
+      <strong>毎日少しずつ数学に触れる習慣</strong>
+      を作ることを意識しましょう。
+    </p>
+
+
+    <h2>テスト前は何を勉強すればいい？</h2>
+
+    <p>
+      定期テスト前には、学校のワークや問題集を中心に復習しましょう。
+    </p>
+
+    <ul>
+      <li>一度問題を解く</li>
+      <li>間違えた問題に印をつける</li>
+      <li>間違えた原因を確認する</li>
+      <li>解説を確認する</li>
+      <li>もう一度解く</li>
+      <li>数日後に再確認する</li>
+    </ul>
+
+    <p>
+      特に、一度間違えた問題をテスト前にもう一度解くことを意識しましょう。
+    </p>
+
+
+    <h2>数学が苦手な人ほど「分からない」を放置しない</h2>
+
+    <p>
+      数学は、前に勉強した内容が次の単元につながっていく教科です。
+    </p>
+
+    <p>
+      「ここはよく分からないけど、とりあえず次に進もう」
+      を繰り返していると、後からさらに難しく感じることがあります。
+    </p>
+
+    <p>
+      だからこそ、
+      <strong>「分からない問題を見つけたら、そのままにしない」</strong>
+      という習慣を作ることが大切です。
+    </p>
+
+
+    <h2>まとめ｜数学は「分からない問題」を解決することが大切</h2>
+
+    <div class="summary">
+
+      <p>
+        中学生の数学の勉強では、次の5つを意識してみましょう。
+      </p>
+
+      <ol>
+        <li>教科書の内容を理解する</li>
+        <li>基本問題を繰り返し解く</li>
+        <li>間違えた問題をそのままにしない</li>
+        <li>分からない問題に時間をかけすぎない</li>
+        <li>分からない問題は質問して解決する</li>
+      </ol>
+
+      <p>
+        数学が苦手だからといって、最初から難しい問題をたくさん解く必要はありません。
+      </p>
+
+      <p>
+        まずは、
+        <strong>「分からない問題を一つずつ解決する」</strong>
+        ことから始めてみましょう。
+      </p>
+
+    </div>
+
+
+    <div class="cta">
+
+      <h2>soLViaでは中高生の学習をオンラインでサポートしています</h2>
+
+      <p>
+        soLViaでは、中学生・高校生を対象にオンライン授業を行っています。
+      </p>
+
+      <p>
+        また、勉強中に分からない問題が出てきた場合には、
+        その問題を個別に解説した動画を提供しています。
+      </p>
+
+      <p>
+        「解説を読んでも、なぜそうなるのか分からない」
+        「自分が分からなかったところを、もう一度確認したい」
+        という場合にも、自分のペースで解説を見直すことができます。
+      </p>
+
+      <p>
+        分からない問題をそのままにしない勉強習慣を、
+        soLViaと一緒につくってみませんか？
+      </p>
+
+      <a href="../contact.html" class="btn">
+        無料体験はこちら
+      </a>
+
+    </div>
+
+
+    <div class="back-home">
+      <a href="../index.html">
+        ← soLViaトップページへ戻る
+      </a>
+    </div>
+
+  </article>
+
+</div>
+
+</main>
+
+
+<footer>
+
+  <img src="../assets/logo.JPG" alt="soLVia ロゴ">
+
+  <div>
+    © 2026 soLVia. All Rights Reserved.
+  </div>
+
+</footer>
+
+
+</body>
+</html>
