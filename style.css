@@ -421,3 +421,85 @@ a:focus-visible, button:focus-visible{outline:2px solid var(--sky);outline-offse
   }
 
 }
+
+/* =========================
+   SERVICE PAGE
+========================= */
+ 
+.mini-link{
+  font-family:'Space Mono',monospace;font-size:.76rem;
+  color:var(--navy-mid);letter-spacing:.02em;
+  display:inline-block;margin-top:24px;
+}
+ 
+/* 01: text + checklist */
+.feature-split{
+  display:grid;grid-template-columns:1.15fr .85fr;gap:56px;
+  align-items:start;margin-top:36px;
+}
+.feature-checklist{
+  list-style:none;background:var(--white);
+  border:1px solid var(--blue-pale);
+  box-shadow:0 1px 3px rgba(13,27,54,.05);
+}
+.feature-checklist li{
+  display:flex;gap:14px;align-items:flex-start;
+  padding:18px 24px;border-bottom:1px solid var(--blue-pale);
+  font-size:.9rem;color:var(--text-soft);
+}
+.feature-checklist li:last-child{border-bottom:none;}
+.feature-checklist li::before{
+  content:"✓";flex:0 0 auto;width:22px;height:22px;border-radius:50%;
+  background:var(--sky-pale);color:var(--navy-mid);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.72rem;font-weight:700;margin-top:1px;
+}
+ 
+@media (max-width:760px){
+  .feature-split{grid-template-columns:1fr;gap:28px;}
+}
+ 
+/* 03: stat grid */
+.stat-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:2px;
+  background:var(--blue-pale);margin-top:36px;
+}
+.stat-card{background:var(--white);padding:28px 26px;border-top:3px solid var(--sky);}
+.stat-card .stat-label{
+  font-family:'Space Mono',monospace;font-size:.72rem;
+  letter-spacing:.15em;color:var(--navy-mid);margin-bottom:10px;display:block;
+}
+.stat-card p{color:var(--text-soft);font-size:.88rem;}
+ 
+@media (max-width:600px){
+  .stat-grid{grid-template-columns:1fr;}
+}
+ 
+/* こんな方におすすめ: persona list */
+.persona-list{list-style:none;border-top:1px solid var(--blue-pale);margin-top:36px;}
+.persona-list li{
+  display:flex;gap:18px;align-items:flex-start;
+  padding:22px 0;border-bottom:1px solid var(--blue-pale);
+}
+.persona-mark{
+  width:8px;height:8px;border-radius:50%;
+  background:var(--sky);margin-top:11px;flex:0 0 auto;
+}
+.persona-list li p{color:var(--navy-deep);font-size:.98rem;line-height:1.8;}
+ 
+/* 1週間の学習イメージ */
+.week-schedule{border-top:1px solid var(--blue-pale);margin-top:36px;}
+.week-row{
+  display:flex;gap:28px;padding:18px 0;
+  border-bottom:1px solid var(--blue-pale);align-items:baseline;
+}
+.week-day{
+  flex:0 0 92px;font-family:'Zen Old Mincho','Noto Serif JP',serif;
+  color:var(--navy-deep);font-weight:700;font-size:1rem;
+}
+.week-row p{color:var(--text-soft);font-size:.92rem;}
+ 
+@media (max-width:600px){
+  .week-row{flex-direction:column;gap:6px;}
+  .week-day{flex-basis:auto;}
+}
