@@ -503,3 +503,36 @@ a:focus-visible, button:focus-visible{outline:2px solid var(--sky);outline-offse
   .week-row{flex-direction:column;gap:6px;}
   .week-day{flex-basis:auto;}
 }
+
+/* =========================
+   PRICE PAGE
+========================= */
+ 
+/* 含まれるもの / 別途費用: two-column checklist */
+.checklist-columns{
+  display:grid;grid-template-columns:1fr 1fr;gap:32px;
+  margin-top:36px;
+}
+.checklist-col h3{
+  font-size:1rem;margin-bottom:16px;color:var(--navy-deep);
+}
+ 
+@media (max-width:760px){
+  .checklist-columns{grid-template-columns:1fr;}
+}
+ 
+/* 料金シミュレーション table */
+.price-table-wrap{overflow-x:auto;margin-top:36px;border:1px solid var(--blue-pale);}
+table.price-table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:520px;}
+.price-table th,.price-table td{padding:16px 22px;text-align:left;border-bottom:1px solid var(--blue-pale);}
+.price-table thead th{
+  background:var(--navy-deep);color:var(--white);
+  font-family:'Space Mono',monospace;font-size:.7rem;
+  letter-spacing:.08em;font-weight:400;
+}
+.price-table tbody tr:last-child td{border-bottom:none;}
+.price-table tbody tr:nth-child(even){background:var(--bg-light);}
+.price-table td{color:var(--text-soft);}
+.price-table td.amount{font-family:'Space Mono',monospace;color:var(--navy-deep);font-weight:700;}
+.price-table td.amount-option{font-family:'Space Mono',monospace;color:var(--navy-mid);font-weight:700;}
+.price-table-note{margin-top:16px;color:var(--text-soft);font-size:.82rem;}
