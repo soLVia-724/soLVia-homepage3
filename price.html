@@ -26,7 +26,7 @@
 <header>
   <div class="nav-wrap">
     <a href="index.html" class="brand">
-      <span class="brand-text">ソルビア</span>
+      <span class="brand-text">ソルビア オンライン学習塾</span>
     </a>
     <button class="menu-btn" id="menuBtn" aria-label="メニュー">☰</button>
     <nav>
@@ -176,63 +176,82 @@
   <div class="eyebrow">SIMULATION</div>
   <h2>料金シミュレーション</h2>
   <p class="desc">
-    学年とご利用頻度の組み合わせで、月額の目安がどう変わるかまとめました。
-    どのパターンもサーバー利用費（月額¥1,000）を含んでいます。
+    いくつかの質問に答えるだけで、月額料金の目安をその場で確認できます。
   </p>
+  <button type="button" id="simOpenBtn" class="btn-oval">料金シミュレーションをする</button>
+</div>
 
-  <div class="price-table-wrap">
-    <table class="price-table">
-      <thead>
-        <tr>
-          <th>学年</th>
-          <th>利用頻度</th>
-          <th>授業のみ</th>
-          <th>動画オプション込み</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>小学生</td>
-          <td>月4回（週1回相当）</td>
-          <td class="amount">¥10,200</td>
-          <td class="amount-option">¥15,180</td>
-        </tr>
-        <tr>
-          <td>小学生</td>
-          <td>月8回（週2回相当）</td>
-          <td class="amount">¥19,400</td>
-          <td class="amount-option">¥24,380</td>
-        </tr>
-        <tr>
-          <td>中学生</td>
-          <td>月4回（週1回相当）</td>
-          <td class="amount">¥11,000</td>
-          <td class="amount-option">¥15,980</td>
-        </tr>
-        <tr>
-          <td>中学生</td>
-          <td>月8回（週2回相当）</td>
-          <td class="amount">¥21,000</td>
-          <td class="amount-option">¥25,980</td>
-        </tr>
-        <tr>
-          <td>高校生</td>
-          <td>月4回（週1回相当）</td>
-          <td class="amount">¥13,000</td>
-          <td class="amount-option">¥17,980</td>
-        </tr>
-        <tr>
-          <td>高校生</td>
-          <td>月8回（週2回相当）</td>
-          <td class="amount">¥25,000</td>
-          <td class="amount-option">¥29,980</td>
-        </tr>
-      </tbody>
-    </table>
+<!-- シミュレーター モーダル -->
+<div id="simModal" class="sim-modal" aria-hidden="true">
+  <div class="sim-modal-backdrop" id="simBackdrop"></div>
+  <div class="sim-modal-panel" role="dialog" aria-modal="true" aria-labelledby="simTitle">
+    <button type="button" class="sim-close" id="simClose" aria-label="閉じる">×</button>
+
+    <!-- STEP1: 学年 -->
+    <div class="sim-screen" data-screen="grade">
+      <div class="sim-step-label">STEP 1 / 学年</div>
+      <h3 id="simTitle">学年を選んでください</h3>
+      <div class="sim-options">
+        <button type="button" class="sim-option" data-value="elementary">小学生</button>
+        <button type="button" class="sim-option" data-value="junior">中学生</button>
+        <button type="button" class="sim-option" data-value="high">高校生</button>
+      </div>
+    </div>
+
+    <!-- STEP2: サービス -->
+    <div class="sim-screen" data-screen="service" hidden>
+      <div class="sim-step-label">STEP 2 / サービス</div>
+      <h3>利用したいサービスを選んでください</h3>
+      <div class="sim-options">
+        <button type="button" class="sim-option" data-value="lesson">オンライン授業のみ</button>
+        <button type="button" class="sim-option" data-value="video">個別動画解説サービスのみ</button>
+        <button type="button" class="sim-option" data-value="both">オンライン授業＋個別動画解説サービス</button>
+      </div>
+    </div>
+
+    <!-- STEP3: 週コマ数 -->
+    <div class="sim-screen" data-screen="frequency" hidden>
+      <div class="sim-step-label">STEP 3 / 受講頻度</div>
+      <h3>週に何コマ受ける予定ですか？</h3>
+      <div class="sim-options sim-options-grid">
+        <button type="button" class="sim-option" data-value="1">週1コマ</button>
+        <button type="button" class="sim-option" data-value="2">週2コマ</button>
+        <button type="button" class="sim-option" data-value="3">週3コマ</button>
+        <button type="button" class="sim-option" data-value="4">週4コマ</button>
+        <button type="button" class="sim-option" data-value="5">週5コマ</button>
+        <button type="button" class="sim-option" data-value="6">週6コマ</button>
+        <button type="button" class="sim-option" data-value="7">週7コマ</button>
+      </div>
+    </div>
+
+    <!-- STEP4: 動画オプション -->
+    <div class="sim-screen" data-screen="videoOption" hidden>
+      <div class="sim-step-label">STEP 4 / オプション</div>
+      <h3>個別動画解説サービスもあわせて利用しますか？</h3>
+      <div class="sim-options">
+        <button type="button" class="sim-option" data-value="yes">はい</button>
+        <button type="button" class="sim-option" data-value="no">いいえ</button>
+      </div>
+    </div>
+
+    <!-- RESULT -->
+    <div class="sim-screen" data-screen="result" hidden>
+      <div class="sim-step-label">RESULT</div>
+      <h3>月額料金の目安</h3>
+      <p class="sim-result-summary" id="simSummary"></p>
+      <div class="sim-result-total" id="simTotal">¥0<span> / 月</span></div>
+      <ul class="sim-result-breakdown" id="simBreakdown"></ul>
+      <p class="sim-result-note">
+        ※ 個別解説動画サービスは月10問までの質問を含みます。上限を超えた場合は1問につき¥790が別途かかります。
+      </p>
+      <div class="sim-result-actions">
+        <a href="contact.html" class="btn btn-solid-navy">無料体験に申し込む</a>
+        <button type="button" class="mini-link" id="simRestart" style="margin-top:0;">もう一度シミュレーションする</button>
+      </div>
+    </div>
+
+    <button type="button" class="sim-back" id="simBack" hidden>← 前の質問に戻る</button>
   </div>
-  <p class="price-table-note">
-    ※ 「授業のみ」はオンライン授業とサーバー利用費の合計、「動画オプション込み」はそこに個別解説動画サービス（オンライン授業とセットの月額¥4,980・月10問まで）を加えた金額です。月10問を超える質問は1問につき¥790が別途かかります。
-  </p>
 </div>
 
 <!-- 受講例・月謝シミュレーション -->
@@ -346,5 +365,6 @@
 </footer>
 
 <script src="script.js"></script>
+<script src="price-simulator.js"></script>
 </body>
 </html>
