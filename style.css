@@ -59,7 +59,7 @@ nav a.active::after{transform:scaleX(1);}
 .menu-btn{display:none;background:none;border:none;color:var(--white);font-size:1.4rem;cursor:pointer;}
 
 @media (max-width:760px){
-  .brand-text{font: size 1px;}
+  .brand-text{font-size:1rem;}
   nav ul{
     position:fixed;top:62px;left:0;right:0;
     flex-direction:column;background:var(--navy-mid);
@@ -560,7 +560,7 @@ table.price-table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:
 /* =========================
    PRICE SIMULATOR
 ========================= */
- 
+
 .btn-oval{
   display:inline-flex;align-items:center;justify-content:center;
   padding:16px 44px;border-radius:999px;
@@ -571,9 +571,9 @@ table.price-table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:
   margin-top:28px;
 }
 .btn-oval:hover{background:var(--sky);border-color:var(--sky);color:var(--navy-deep);}
- 
+
 body.sim-open{overflow:hidden;}
- 
+
 .sim-modal{position:fixed;inset:0;z-index:200;display:none;}
 .sim-modal.open{display:block;}
 .sim-modal-backdrop{position:absolute;inset:0;background:rgba(13,27,54,.55);}
@@ -590,7 +590,7 @@ body.sim-open{overflow:hidden;}
   padding:4px;
 }
 .sim-close:hover{color:var(--navy-deep);}
- 
+
 .sim-step-label{
   font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.2em;
   color:var(--navy-mid);margin-bottom:12px;
@@ -599,7 +599,7 @@ body.sim-open{overflow:hidden;}
   font-size:1.2rem;margin-bottom:28px;color:var(--navy-deep);
   font-family:'Zen Old Mincho','Noto Serif JP',serif;
 }
- 
+
 .sim-options{display:flex;flex-direction:column;gap:12px;}
 .sim-options-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
 .sim-option{
@@ -611,14 +611,14 @@ body.sim-open{overflow:hidden;}
 .sim-options-grid .sim-option{text-align:center;padding:14px 4px;}
 .sim-option:hover{border-color:var(--sky);background:var(--sky-pale);}
 .sim-option.selected{border-color:var(--navy-deep);background:var(--navy-deep);color:var(--white);}
- 
+
 .sim-back{
   display:inline-block;margin-top:32px;background:none;border:none;
   color:var(--navy-mid);font-family:'Space Mono',monospace;font-size:.78rem;
   cursor:pointer;padding:0;
 }
 .sim-back:hover{color:var(--navy-deep);}
- 
+
 .sim-result-summary{
   font-family:'Space Mono',monospace;font-size:.78rem;
   color:var(--navy-mid);margin-bottom:10px;letter-spacing:.02em;
@@ -636,9 +636,50 @@ body.sim-open{overflow:hidden;}
 .sim-result-breakdown li span:last-child{color:var(--navy-deep);font-weight:700;white-space:nowrap;}
 .sim-result-note{font-size:.8rem;color:var(--text-soft);margin-bottom:28px;}
 .sim-result-actions{display:flex;flex-wrap:wrap;gap:24px;align-items:center;}
- 
+
 @media (max-width:600px){
   .sim-modal-panel{padding:44px 22px 32px;margin:0;width:100%;max-width:none;
     min-height:100%;border-radius:0;max-height:none;}
   .sim-options-grid{grid-template-columns:repeat(4,1fr);}
+}
+
+/* =========================
+   CONTACT FORM
+========================= */
+
+.solvia-form{display:flex;flex-direction:column;gap:22px;padding:36px 8px;}
+.form-row{display:flex;flex-direction:column;gap:8px;}
+.form-row label{font-size:.88rem;color:var(--navy-deep);font-weight:700;}
+.form-row .required{
+  display:inline-block;margin-left:8px;font-family:'Space Mono',monospace;
+  font-size:.62rem;color:var(--white);background:var(--navy-mid);
+  padding:2px 8px;letter-spacing:.05em;vertical-align:middle;
+}
+.form-row input,
+.form-row select,
+.form-row textarea{
+  font-family:'Noto Sans JP',sans-serif;font-size:.92rem;color:var(--navy-deep);
+  border:1px solid var(--blue-pale);background:var(--white);
+  padding:12px 14px;width:100%;
+}
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus{
+  outline:none;border-color:var(--sky);
+}
+.form-row textarea{resize:vertical;}
+.solvia-form .btn{
+  align-self:flex-start;border:none;cursor:pointer;
+  font-family:'Noto Sans JP',sans-serif;margin-top:8px;
+}
+
+.form-success-msg{
+  padding:48px 32px;text-align:center;background:var(--sky-pale);
+  border:1px solid var(--sky);color:var(--navy-deep);font-size:1.02rem;
+}
+
+.form-error-msg{
+  padding:20px 24px;margin:24px 24px 0;
+  background:var(--bg-light);border:1px solid var(--navy-mid);
+  color:var(--navy-deep);font-size:.88rem;
 }

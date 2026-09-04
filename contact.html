@@ -15,7 +15,7 @@
 <header>
   <div class="nav-wrap">
     <a href="index.html" class="brand">
-      <span class="brand-text">ソルビア</span>
+      <span class="brand-text">ソルビア オンライン学習塾</span>
     </a>
     <button class="menu-btn" id="menuBtn" aria-label="メニュー">☰</button>
     <nav>
@@ -41,12 +41,68 @@
   <div class="section section-light">
     <div class="wrap">
       <p class="contact-note">無料体験のお申し込みや、オンライン授業・個別解説動画サービスに関するご相談など、必要事項をご入力のうえ送信してください。担当より折り返しご連絡いたします。</p>
+
       <div class="contact-panel">
-        <div class="form-frame-wrap">
-          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdGCJvpTZvOcqr467q6lguzJD1uQNOBoQ3KzpVBr1vtV3Fjug/viewform?embedded=true" title="soLVia お申し込みフォーム">読み込んでいます…</iframe>
+        <div id="formErrorMsg" class="form-error-msg" hidden>
+          送信に失敗しました。お手数ですが、時間をおいて再度お試しいただくか、下記のメールアドレスへ直接ご連絡ください。
+        </div>
+
+        <form id="soLViaForm" class="solvia-form" method="POST" action="https://formspree.io/f/myeypkrr">
+
+          <input type="hidden" name="_subject" value="soLViaサイトからのお問い合わせ">
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+          <div class="form-row">
+            <label for="name">お名前<span class="required">必須</span></label>
+            <input type="text" id="name" name="name" required>
+          </div>
+
+          <div class="form-row">
+            <label for="kana">ふりがな</label>
+            <input type="text" id="kana" name="kana">
+          </div>
+
+          <div class="form-row">
+            <label for="grade">学年<span class="required">必須</span></label>
+            <select id="grade" name="grade" required>
+              <option value="">選択してください</option>
+              <option value="小学生">小学生</option>
+              <option value="中学生">中学生</option>
+              <option value="高校生">高校生</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="phone">電話番号</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+
+          <div class="form-row">
+            <label for="email">メールアドレス<span class="required">必須</span></label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="form-row">
+            <label for="inquiryType">お問い合わせ種別</label>
+            <select id="inquiryType" name="inquiryType">
+              <option value="無料体験の申し込み">無料体験の申し込み</option>
+              <option value="料金について">料金について</option>
+              <option value="その他のご質問">その他のご質問</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="message">お問い合わせ内容</label>
+            <textarea id="message" name="message" rows="5"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-solid-navy">送信する</button>
+        </form>
+
+        <div id="formSuccessMsg" class="form-success-msg" hidden>
+          送信ありがとうございました。担当よりご連絡いたします。
         </div>
       </div>
-           <p class="contact-alt">フォームが表示されない場合は<a href="https://docs.google.com/forms/d/e/1FAIpQLSdGCJvpTZvOcqr467q6lguzJD1uQNOBoQ3KzpVBr1vtV3Fjug/viewform" target="_blank" rel="noopener">こちらから新しいタブで開く</a></p>
     </div>
   </div>
 
@@ -68,5 +124,6 @@
 </footer>
 
 <script src="script.js"></script>
+<script src="contact-form.js"></script>
 </body>
 </html>
