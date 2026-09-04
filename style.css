@@ -59,6 +59,7 @@ nav a.active::after{transform:scaleX(1);}
 .menu-btn{display:none;background:none;border:none;color:var(--white);font-size:1.4rem;cursor:pointer;}
 
 @media (max-width:760px){
+  .brand-text{font: size 1px;}
   nav ul{
     position:fixed;top:62px;left:0;right:0;
     flex-direction:column;background:var(--navy-mid);
