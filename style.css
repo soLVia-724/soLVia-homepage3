@@ -277,6 +277,8 @@ main{padding-top:62px;}
 
 /* ===== Pricing ===== */
 .price-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+.price-grid-3{grid-template-columns:repeat(3,1fr);}
+.price-grid-2{grid-template-columns:1fr 1fr;}
 .price-card{background:var(--white);border:1px solid var(--blue-pale);padding:44px 36px;position:relative;}
 .price-card.highlight{border-color:var(--navy-deep);}
 .price-tag{
@@ -291,7 +293,9 @@ main{padding-top:62px;}
 .price-includes li{list-style:none;font-size:.88rem;color:var(--text-soft);margin-bottom:10px;padding-left:20px;position:relative;}
 .price-includes li::before{content:"—";position:absolute;left:0;color:var(--sky);}
 
-@media (max-width:760px){.price-grid{grid-template-columns:1fr;}}
+@media (max-width:760px){
+  .price-grid,.price-grid-3,.price-grid-2{grid-template-columns:1fr;}
+}
 
 /* ===== Contact / form embed ===== */
 .contact-panel{background:var(--white);border:1px solid var(--blue-pale);padding:8px;}
@@ -425,13 +429,13 @@ a:focus-visible, button:focus-visible{outline:2px solid var(--sky);outline-offse
 /* =========================
    SERVICE PAGE
 ========================= */
- 
+
 .mini-link{
   font-family:'Space Mono',monospace;font-size:.76rem;
   color:var(--navy-mid);letter-spacing:.02em;
   display:inline-block;margin-top:24px;
 }
- 
+
 /* 01: text + checklist */
 .feature-split{
   display:grid;grid-template-columns:1.15fr .85fr;gap:56px;
@@ -454,11 +458,11 @@ a:focus-visible, button:focus-visible{outline:2px solid var(--sky);outline-offse
   display:flex;align-items:center;justify-content:center;
   font-size:.72rem;font-weight:700;margin-top:1px;
 }
- 
+
 @media (max-width:760px){
   .feature-split{grid-template-columns:1fr;gap:28px;}
 }
- 
+
 /* 03: stat grid */
 .stat-grid{
   display:grid;grid-template-columns:repeat(2,1fr);gap:2px;
@@ -470,11 +474,11 @@ a:focus-visible, button:focus-visible{outline:2px solid var(--sky);outline-offse
   letter-spacing:.15em;color:var(--navy-mid);margin-bottom:10px;display:block;
 }
 .stat-card p{color:var(--text-soft);font-size:.88rem;}
- 
+
 @media (max-width:600px){
   .stat-grid{grid-template-columns:1fr;}
 }
- 
+
 /* こんな方におすすめ: persona list */
 .persona-list{list-style:none;border-top:1px solid var(--blue-pale);margin-top:36px;}
 .persona-list li{
@@ -486,7 +490,7 @@ a:focus-visible, button:focus-visible{outline:2px solid var(--sky);outline-offse
   background:var(--sky);margin-top:11px;flex:0 0 auto;
 }
 .persona-list li p{color:var(--navy-deep);font-size:.98rem;line-height:1.8;}
- 
+
 /* 1週間の学習イメージ */
 .week-schedule{border-top:1px solid var(--blue-pale);margin-top:36px;}
 .week-row{
@@ -498,7 +502,7 @@ a:focus-visible, button:focus-visible{outline:2px solid var(--sky);outline-offse
   color:var(--navy-deep);font-weight:700;font-size:1rem;
 }
 .week-row p{color:var(--text-soft);font-size:.92rem;}
- 
+
 @media (max-width:600px){
   .week-row{flex-direction:column;gap:6px;}
   .week-day{flex-basis:auto;}
@@ -507,7 +511,7 @@ a:focus-visible, button:focus-visible{outline:2px solid var(--sky);outline-offse
 /* =========================
    PRICE PAGE
 ========================= */
- 
+
 /* 含まれるもの / 別途費用: two-column checklist */
 .checklist-columns{
   display:grid;grid-template-columns:1fr 1fr;gap:32px;
@@ -516,11 +520,11 @@ a:focus-visible, button:focus-visible{outline:2px solid var(--sky);outline-offse
 .checklist-col h3{
   font-size:1rem;margin-bottom:16px;color:var(--navy-deep);
 }
- 
+
 @media (max-width:760px){
   .checklist-columns{grid-template-columns:1fr;}
 }
- 
+
 /* 料金シミュレーション table */
 .price-table-wrap{overflow-x:auto;margin-top:36px;border:1px solid var(--blue-pale);}
 table.price-table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:520px;}
