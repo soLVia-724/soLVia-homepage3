@@ -59,15 +59,15 @@ document.getElementById('menuBtn')?.addEventListener('click', () => {
     h = canvas.height = hero.offsetHeight;
   }
 
-  function makeParticles() {
-    const count = Math.max(18, Math.round(w / 60));
+    function makeParticles() {
+    const count = Math.max(34, Math.round(w / 32));
     particles = Array.from({ length: count }, () => ({
       x: Math.random() * w,
       y: Math.random() * h,
-      r: Math.random() * 1.6 + 0.6,
-      speed: Math.random() * 0.35 + 0.08,
-      drift: (Math.random() - 0.5) * 0.3,
-      alpha: Math.random() * 0.5 + 0.2
+      r: Math.random() * 2.4 + 0.8,
+      speed: Math.random() * 0.7 + 0.18,
+      drift: (Math.random() - 0.5) * 0.5,
+      alpha: Math.random() * 0.6 + 0.25
     }));
   }
 
@@ -132,4 +132,69 @@ document.getElementById('menuBtn')?.addEventListener('click', () => {
   }, { threshold: 0.6 });
 
   counters.forEach(el => io.observe(el));
+})();
+
+/* =========================================
+   ヒーロー見出し：1文字ずつ大きく登場
+========================================= */
+(function () {
+  const h1 = document.querySelector('.hero h1');
+  if (!h1) return;
+
+  const nodes = Array.from(h1.childNodes);
+  const frag = document.createDocumentFragment();
+  let idx = 0;
+
+  nodes.forEach(node => {
+    if (node.nodeType === Node.TEXT_NODE) {
+      node.textContent.split('').forEach(ch => {
+        const span = document.createElement('span');
+        span.className = 'hero-char';
+        span.textContent = ch === ' ' ? '\u00A0' : ch;
+        span.style.animationDelay = (idx * 0.028) + 's';
+        idx++;
+        frag.appendChild(span);
+      });
+    } else {
+      frag.appendChild(node.cloneNode(true));
+    }
+  });
+
+  h1.innerHTML = '';
+  h1.appendChild(frag);
+})();
+
+/* =========================================
+   ヒーロー背景ライン：スクロールでパララックス
+========================================= */
+(function () {
+  const viaLine = document.querySelector('.via-line');
+  if (!viaLine) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    viaLine.style.transform = `translateY(${y * 0.18}px)`;
+  }, { passive: true });
+})();
+
+/* =========================================
+   カーソルに追従する光（ヒーロー内のみ）
+========================================= */
+(function () {
+  const hero = document.querySelector('.hero');
+  if (!hero) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const spot = document.createElement('div');
+  spot.className = 'hero-spotlight';
+  hero.appendChild(spot);
+
+  hero.addEventListener('mousemove', (e) => {
+    const rect = hero.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    spot.style.setProperty('--x', x + '%');
+    spot.style.setProperty('--y', y + '%');
+  });
 })();
