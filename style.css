@@ -643,13 +643,6 @@ body.sim-open{overflow:hidden;}
   .sim-options-grid{grid-template-columns:repeat(4,1fr);}
 }
 
-.social-links {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  margin: 24px 0;
-}
-
 .social-icon {
   display: flex;
   align-items: center;
@@ -657,9 +650,8 @@ body.sim-open{overflow:hidden;}
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: #f0f0f0;
-  color: #444;
-  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+  color: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .social-icon svg {
@@ -669,24 +661,21 @@ body.sim-open{overflow:hidden;}
 
 .social-icon:hover {
   transform: translateY(-3px) scale(1.08);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-.social-instagram:hover {
+.social-instagram {
   background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
-  color: #fff;
 }
 
-.social-tiktok:hover {
+.social-tiktok {
   background: #000;
-  color: #fff;
 }
 
-.social-youtube:hover {
+.social-youtube {
   background: #ff0000;
-  color: #fff;
 }
 
-.social-x:hover {
+.social-x {
   background: #000;
-  color: #fff;
 }
