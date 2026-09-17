@@ -308,7 +308,7 @@ main{padding-top:62px;}
 
 /* ===== Footer ===== */
 footer{background:var(--navy-deep);color:rgba(255,255,255,.55);padding:36px 0;}
-footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:.78rem;}
+footer .wrap{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:16px;font-size:.78rem;text-align:center;}
 footer .wrap img{height:26px;opacity:.85;}
 
 a:focus-visible, button:focus-visible{outline:2px solid var(--sky);outline-offset:2px;}
@@ -642,6 +642,10 @@ body.sim-open{overflow:hidden;}
     min-height:100%;border-radius:0;max-height:none;}
   .sim-options-grid{grid-template-columns:repeat(4,1fr);}
 }
+
+/* =========================
+   SNSロゴ
+========================= */
 
 .social-links {
   display: flex;
