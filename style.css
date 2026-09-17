@@ -643,6 +643,13 @@ body.sim-open{overflow:hidden;}
   .sim-options-grid{grid-template-columns:repeat(4,1fr);}
 }
 
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
 .social-icon {
   display: flex;
   align-items: center;
