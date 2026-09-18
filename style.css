@@ -804,3 +804,46 @@ body.sim-open{overflow:hidden;}
 @media (max-width:760px){
   .sample-exchange-grid{grid-template-columns:1fr;}
 }
+/* =========================================
+   ABOUT PAGE: 代表プロフィール
+========================================= */
+.founder-profile{
+  display:grid;grid-template-columns:280px 1fr;gap:56px;
+  align-items:center;
+}
+.founder-photo img{
+  width:100%;aspect-ratio:1/1;object-fit:cover;
+  border-radius:6px;
+}
+.founder-name{
+  font-size:1.8rem;margin:6px 0 4px;color:var(--navy-deep);
+}
+.founder-role{
+  font-family:'Space Mono',monospace;font-size:.78rem;
+  letter-spacing:.1em;color:var(--navy-mid);margin-bottom:24px;
+}
+.founder-facts{list-style:none;border-top:1px solid var(--blue-pale);}
+.founder-facts li{
+  padding:14px 0;border-bottom:1px solid var(--blue-pale);
+  font-size:.92rem;color:var(--text-soft);
+  padding-left:20px;position:relative;
+}
+.founder-facts li::before{
+  content:"—";position:absolute;left:0;color:var(--sky);
+}
+
+@media (max-width:760px){
+  .founder-profile{grid-template-columns:1fr;gap:28px;text-align:center;}
+  .founder-photo img{max-width:220px;margin:0 auto;}
+  .founder-facts li{text-align:left;}
+}
+
+/* =========================================
+   ABOUT PAGE: ストーリー本文
+========================================= */
+.story-text{max-width:720px;}
+.story-text p{
+  color:var(--text-soft);font-size:.98rem;line-height:2;
+  margin-bottom:28px;
+}
+.story-text p:last-child{margin-bottom:0;}
