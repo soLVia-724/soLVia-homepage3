@@ -860,3 +860,18 @@ body.sim-open{overflow:hidden;}
   color:var(--navy-deep);
   font-weight:700;
 }
+
+/* =========================================
+   TEXT EMPHASIS: モーション付き強調
+========================================= */
+@keyframes emPulse{
+  0%,100%{opacity:1;}
+  50%{opacity:.5;}
+}
+.em-emphasis{
+  color:#e6483c;
+  font-weight:700;
+  font-size:1.25em;
+  display:inline-block;
+  animation:emPulse 1.6s ease-in-out infinite;
+}
