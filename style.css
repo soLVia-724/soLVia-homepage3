@@ -847,3 +847,16 @@ body.sim-open{overflow:hidden;}
   margin-bottom:28px;
 }
 .story-text p:last-child{margin-bottom:0;}
+
+/* =========================================
+   TEXT EMPHASIS
+========================================= */
+.em-red{
+  color:#e6483c;
+  font-weight:700;
+  font-size:1.15em;
+}
+.em-strong{
+  color:var(--navy-deep);
+  font-weight:700;
+}
