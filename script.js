@@ -225,7 +225,7 @@ document.getElementById('menuBtn')?.addEventListener('click', () => {
     })
       .then(function (response) {
         if (response.ok) {
-          statusEl.textContent = 'お申し込みありがとうございました。続けて、公式LINEをお友だち追加のうえ、質問したい問題の写真をお送りください。内容を確認後、折り返しご連絡いたします。';
+          statusEl.textContent = 'お申し込みありがとうございました。続けて、下記に表示されている公式LINEをお友だち追加のうえ、質問したい問題の写真をお送りください。内容を確認後、折り返しご連絡いたします。';
           statusEl.className = 'form-status show success';
           form.reset();
         } else {
