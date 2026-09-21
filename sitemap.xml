@@ -2,43 +2,39 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://solvia-stydy.com/</loc>
+    <loc>https://solvia-study.com/</loc>
   </url>
 
   <url>
-   <loc>https://solvia-study.com/about.html</loc>
+    <loc>https://solvia-study.com/about.html</loc>
   </url>
 
   <url>
-    <loc>https://solvia-stydy.com/service.html</loc>
+    <loc>https://solvia-study.com/service.html</loc>
   </url>
 
   <url>
-    <loc>https://solvia-stydy.com/price.html</loc>
+    <loc>https://solvia-study.com/price.html</loc>
   </url>
 
   <url>
-    <loc>https://solvia-stydy.com/contact.html</loc>
-  </url>
-
-<url>
-    <loc>https://solvia-stydy.com/articles/junior-math.html</loc>
+    <loc>https://solvia-study.com/contact.html</loc>
   </url>
 
   <url>
-    <loc>https://solvia-stydy.com/articles/math-question.html</loc>
+    <loc>https://solvia-study.com/articles/junior-math.html</loc>
   </url>
 
   <url>
-    <loc>https://solvia-stydy.com/articles/home-study.html</loc>
+    <loc>https://solvia-study.com/articles/math-question.html</loc>
   </url>
 
   <url>
-  <loc>https://solvia-stydy.com/articles/high-school-math.html</loc>
-</url>
+    <loc>https://solvia-study.com/articles/home-study.html</loc>
+  </url>
 
   <url>
-  <loc>https://solvia-stydy.com/articles/online-juku.html</loc>
+    <loc>https://solvia-study.com/articles/high-school-math.html</loc>
   </url>
-  
+
 </urlset>
