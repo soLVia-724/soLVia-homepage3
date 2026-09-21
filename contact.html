@@ -46,7 +46,7 @@
 体験後のご入会は必須ではありません。
 </p>
 
-          <form class="solvia-form" action="https://formspree.io/f/myeypkrr" method="POST" enctype="multipart/form-data">
+      <form class="solvia-form" id="solviaForm" action="https://formspree.io/f/myeypkrr" method="POST"></form>
 
         <div class="form-group">
           <label class="form-label" for="student_name">生徒さんのお名前<span class="required">必須</span></label>
@@ -101,18 +101,19 @@
           </div>
         </div>
 
-        <div class="form-group">
-          <label class="form-label">質問したい問題の写真<span class="required">必須</span></label>
-          <p class="form-help">
-            分からない問題の写真をアップロードしてください。最大3問まで無料体験の対象となります。<br>
-            問題文だけでなく、どこまで自分で解いたか分かるノートの写真も一緒に送っていただけると、より的確な解説ができます。
-          </p>
-          <label class="form-file" id="fileDropLabel">
-            <input type="file" id="problem_photos" name="問題の写真" accept="image/*" multiple required>
-            <span class="form-file-label">タップして写真を選択</span>
-            <div class="form-file-note">複数枚まとめてアップロードできます</div>
-            <ul class="form-file-list" id="fileList"></ul>
-          </label>
+                <div class="form-group">
+          <div class="line-photo-notice">
+            <span class="line-photo-notice-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 8l9 6 9-6"/></svg>
+            </span>
+            <div>
+              <p class="line-photo-notice-title">質問したい問題の写真について</p>
+              <p class="form-help" style="margin-bottom:0;">
+                このフォームの送信後、公式LINEをお友だち追加のうえ、分からない問題の写真をそのままLINEで送ってください。<br>
+                最大3問まで無料体験の対象となります。問題文だけでなく、どこまで自分で解いたか分かるノートの写真も一緒に送っていただけると、より的確な解説ができます。
+              </p>
+            </div>
+          </div>
         </div>
 
         <div class="form-group">

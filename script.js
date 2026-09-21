@@ -206,21 +206,8 @@ document.getElementById('menuBtn')?.addEventListener('click', () => {
   var form = document.getElementById('solviaForm');
   if (!form) return;
 
-  var fileInput = document.getElementById('problem_photos');
-  var fileList = document.getElementById('fileList');
   var statusEl = document.getElementById('formStatus');
   var submitBtn = document.getElementById('formSubmitBtn');
-
-  if (fileInput) {
-    fileInput.addEventListener('change', function () {
-      fileList.innerHTML = '';
-      Array.from(fileInput.files).forEach(function (f) {
-        var li = document.createElement('li');
-        li.textContent = '📎 ' + f.name;
-        fileList.appendChild(li);
-      });
-    });
-  }
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -238,10 +225,9 @@ document.getElementById('menuBtn')?.addEventListener('click', () => {
     })
       .then(function (response) {
         if (response.ok) {
-          statusEl.textContent = 'お申し込みありがとうございました。内容を確認のうえ、公式LINEにて折り返しご連絡いたします。';
+          statusEl.textContent = 'お申し込みありがとうございました。続けて、公式LINEをお友だち追加のうえ、質問したい問題の写真をお送りください。内容を確認後、折り返しご連絡いたします。';
           statusEl.className = 'form-status show success';
           form.reset();
-          fileList.innerHTML = '';
         } else {
           throw new Error('送信に失敗しました');
         }
