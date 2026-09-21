@@ -198,3 +198,61 @@ document.getElementById('menuBtn')?.addEventListener('click', () => {
     spot.style.setProperty('--y', y + '%');
   });
 })();
+
+/* =========================================
+   CONTACT FORM: Formspree送信処理
+========================================= */
+(function () {
+  var form = document.getElementById('solviaForm');
+  if (!form) return;
+
+  var fileInput = document.getElementById('problem_photos');
+  var fileList = document.getElementById('fileList');
+  var statusEl = document.getElementById('formStatus');
+  var submitBtn = document.getElementById('formSubmitBtn');
+
+  if (fileInput) {
+    fileInput.addEventListener('change', function () {
+      fileList.innerHTML = '';
+      Array.from(fileInput.files).forEach(function (f) {
+        var li = document.createElement('li');
+        li.textContent = '📎 ' + f.name;
+        fileList.appendChild(li);
+      });
+    });
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = '送信中…';
+    statusEl.className = 'form-status';
+
+    var formData = new FormData(form);
+
+    fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    })
+      .then(function (response) {
+        if (response.ok) {
+          statusEl.textContent = 'お申し込みありがとうございました。内容を確認のうえ、公式LINEにて折り返しご連絡いたします。';
+          statusEl.className = 'form-status show success';
+          form.reset();
+          fileList.innerHTML = '';
+        } else {
+          throw new Error('送信に失敗しました');
+        }
+      })
+      .catch(function () {
+        statusEl.textContent = '送信に失敗しました。お手数ですが、下記のメールアドレスへ直接ご連絡ください。';
+        statusEl.className = 'form-status show error';
+      })
+      .finally(function () {
+        submitBtn.disabled = false;
+        submitBtn.textContent = '無料体験に申し込む';
+      });
+  });
+})();

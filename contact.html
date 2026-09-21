@@ -46,13 +46,101 @@
 体験後のご入会は必須ではありません。
 </p>
 
-      <div class="contact-panel">
-        <div class="form-frame-wrap">
-          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdGCJvpTZvOcqr467q6lguzJD1uQNOBoQ3KzpVBr1vtV3Fjug/viewform?embedded=true" title="soLVia お申し込みフォーム">読み込んでいます…</iframe>
+          <form class="solvia-form" id="solviaForm" action="https://formspree.io/f/myeypkrr" method="POST" enctype="multipart/form-data">
+
+        <div class="form-group">
+          <label class="form-label" for="student_name">生徒さんのお名前<span class="required">必須</span></label>
+          <input class="form-input" type="text" id="student_name" name="生徒さんのお名前" required>
         </div>
-      </div>
-           <p class="contact-alt">フォームが表示されない場合は<a href="https://docs.google.com/forms/d/e/1FAIpQLSdGCJvpTZvOcqr467q6lguzJD1uQNOBoQ3KzpVBr1vtV3Fjug/viewform" target="_blank" rel="noopener">こちらから新しいタブで開く</a></p>
-    </div>
+
+        <div class="form-group">
+          <label class="form-label" for="line_name">LINE上の表示名<span class="required">必須</span></label>
+          <p class="form-help">
+            公式LINEでご連絡する際に必要です。LINEに登録されている「名前」を、絵文字も含めて正確にご記入ください。（例：田中たろう🎮）<br>
+            LINEアプリの「ホーム」→ご自身のアイコンをタップすると確認できます。
+          </p>
+          <input class="form-input" type="text" id="line_name" name="LINE上の表示名" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="grade">学年<span class="required">必須</span></label>
+          <select class="form-select" id="grade" name="学年" required>
+            <option value="">選択してください</option>
+            <option value="小学1年生">小学1年生</option>
+            <option value="小学2年生">小学2年生</option>
+            <option value="小学3年生">小学3年生</option>
+            <option value="小学4年生">小学4年生</option>
+            <option value="小学5年生">小学5年生</option>
+            <option value="小学6年生">小学6年生</option>
+            <option value="中学1年生">中学1年生</option>
+            <option value="中学2年生">中学2年生</option>
+            <option value="中学3年生">中学3年生</option>
+            <option value="高校1年生">高校1年生</option>
+            <option value="高校2年生">高校2年生</option>
+            <option value="高校3年生">高校3年生</option>
+            <option value="その他">その他</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">質問する問題の科目<span class="required">必須</span></label>
+          <p class="form-help">今回質問したい問題の科目を選択してください（複数選択可）。</p>
+          <div class="form-checkbox-grid">
+            <label class="form-checkbox-item"><input type="checkbox" name="科目" value="国語"><span>国語</span></label>
+            <label class="form-checkbox-item"><input type="checkbox" name="科目" value="数学"><span>数学</span></label>
+            <label class="form-checkbox-item"><input type="checkbox" name="科目" value="英語"><span>英語</span></label>
+            <label class="form-checkbox-item"><input type="checkbox" name="科目" value="理科"><span>理科</span></label>
+            <label class="form-checkbox-item"><input type="checkbox" name="科目" value="社会"><span>社会</span></label>
+            <label class="form-checkbox-item"><input type="checkbox" name="科目" value="現代文"><span>現代文</span></label>
+            <label class="form-checkbox-item"><input type="checkbox" name="科目" value="物理"><span>物理</span></label>
+            <label class="form-checkbox-item"><input type="checkbox" name="科目" value="化学"><span>化学</span></label>
+            <label class="form-checkbox-item"><input type="checkbox" name="科目" value="地理"><span>地理</span></label>
+            <label class="form-checkbox-item"><input type="checkbox" name="科目" value="日本史"><span>日本史</span></label>
+            <label class="form-checkbox-item"><input type="checkbox" name="科目" value="公共"><span>公共</span></label>
+            <label class="form-checkbox-item"><input type="checkbox" name="科目" value="その他"><span>その他</span></label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">質問したい問題の写真<span class="required">必須</span></label>
+          <p class="form-help">
+            分からない問題の写真をアップロードしてください。最大3問まで無料体験の対象となります。<br>
+            問題文だけでなく、どこまで自分で解いたか分かるノートの写真も一緒に送っていただけると、より的確な解説ができます。
+          </p>
+          <label class="form-file" id="fileDropLabel">
+            <input type="file" id="problem_photos" name="問題の写真" accept="image/*" multiple required>
+            <span class="form-file-label">タップして写真を選択</span>
+            <div class="form-file-note">複数枚まとめてアップロードできます</div>
+            <ul class="form-file-list" id="fileList"></ul>
+          </label>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="notes">質問内容の補足<span style="color:var(--text-soft);font-weight:400;font-size:.78rem;margin-left:6px;">任意</span></label>
+          <p class="form-help">特に分からない部分や、解説してほしいポイントなどがあれば自由にご記入ください。（例：「(1)は解けたが(2)の考え方が分からない」など）</p>
+          <textarea class="form-textarea" id="notes" name="補足"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="referral">soLViaを何で知りましたか？<span style="color:var(--text-soft);font-weight:400;font-size:.78rem;margin-left:6px;">任意</span></label>
+          <select class="form-select" id="referral" name="流入経路">
+            <option value="">選択してください</option>
+            <option value="Instagram">Instagram</option>
+            <option value="TikTok">TikTok</option>
+            <option value="YouTube">YouTube</option>
+            <option value="X（Twitter）">X（Twitter）</option>
+            <option value="知人の紹介">知人の紹介</option>
+            <option value="その他">その他</option>
+          </select>
+        </div>
+
+        <input type="hidden" name="_subject" value="【soLVia】無料体験のお申し込みがありました">
+
+        <button type="submit" class="form-submit-btn" id="formSubmitBtn">無料体験に申し込む</button>
+
+        <div class="form-status" id="formStatus"></div>
+      </form>  
+</div>
   </div>
 
   <div class="section section-tint compact">
