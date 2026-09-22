@@ -250,18 +250,25 @@ document.addEventListener('DOMContentLoaded', function () {
   const banner = document.getElementById('campaignBanner');
   const bannerClose = document.getElementById('campaignBannerClose');
 
-  if (splash) {
-    const SPLASH_DURATION = 7000; // 7秒後に自動で閉じる(5000〜10000の間で調整可)
+    if (splash) {
+    const SPLASH_DURATION = 7000; // 表示している時間(5000〜10000の間で調整可)
+
+    // ふわっと表示(少し間をおいてからフェードイン)
+    requestAnimationFrame(function () {
+      setTimeout(function () {
+        splash.classList.add('is-visible');
+      }, 50);
+    });
 
     const hideSplash = function () {
+      splash.classList.remove('is-visible');
       splash.classList.add('is-hidden');
       setTimeout(function () {
         splash.style.display = 'none';
-      }, 600);
+      }, 900);
     };
 
     const timer = setTimeout(hideSplash, SPLASH_DURATION);
-
     // 画像タップ・クリックでもすぐ閉じられるように
     splash.addEventListener('click', function () {
       clearTimeout(timer);
