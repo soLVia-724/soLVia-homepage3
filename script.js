@@ -249,37 +249,54 @@ document.addEventListener('DOMContentLoaded', function () {
   const splashClose = document.getElementById('campaignSplashClose');
   const banner = document.getElementById('campaignBanner');
   const bannerClose = document.getElementById('campaignBannerClose');
+  const reopenBtn = document.getElementById('campaignReopenBtn');
 
-    if (splash) {
-    const SPLASH_DURATION = 7000; // 表示している時間(5000〜10000の間で調整可)
+  if (splash) {
+    const SPLASH_DURATION = 7000; // 表示している時間(調整可)
+    let autoTimer = null;
 
-    // ふわっと表示(少し間をおいてからフェードイン)
-    requestAnimationFrame(function () {
-      setTimeout(function () {
-        splash.classList.add('is-visible');
-      }, 50);
-    });
-
-    const hideSplash = function () {
+    var hideSplash = function () {
       splash.classList.remove('is-visible');
       splash.classList.add('is-hidden');
       setTimeout(function () {
         splash.style.display = 'none';
       }, 900);
+      if (reopenBtn) reopenBtn.style.display = 'flex';
     };
 
-    const timer = setTimeout(hideSplash, SPLASH_DURATION);
-    // 画像タップ・クリックでもすぐ閉じられるように
+    var showSplash = function () {
+      splash.style.display = 'flex';
+      splash.classList.remove('is-hidden');
+      requestAnimationFrame(function () {
+        setTimeout(function () {
+          splash.classList.add('is-visible');
+        }, 50);
+      });
+      if (reopenBtn) reopenBtn.style.display = 'none';
+
+      clearTimeout(autoTimer);
+      autoTimer = setTimeout(hideSplash, SPLASH_DURATION);
+    };
+
+    // 初回表示
+    showSplash();
+
     splash.addEventListener('click', function () {
-      clearTimeout(timer);
+      clearTimeout(autoTimer);
       hideSplash();
     });
 
     if (splashClose) {
       splashClose.addEventListener('click', function (e) {
         e.stopPropagation();
-        clearTimeout(timer);
+        clearTimeout(autoTimer);
         hideSplash();
+      });
+    }
+
+    if (reopenBtn) {
+      reopenBtn.addEventListener('click', function () {
+        showSplash();
       });
     }
   }
