@@ -1066,6 +1066,19 @@ body.sim-open{overflow:hidden;}
   opacity: 0;
   transform: scale(0.96);
   transition: opacity 0.9s ease, transform 0.9s ease;
+  overflow: hidden;
+}
+
+.campaign-splash::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("assets/campaign-banner.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(30px) brightness(0.7);
+  transform: scale(1.15);
+  z-index: 0;
 }
 
 .campaign-splash.is-visible {
@@ -1080,30 +1093,16 @@ body.sim-open{overflow:hidden;}
 }
 
 .campaign-splash-img {
+  position: relative;
+  z-index: 1;
   max-width: 100%;
-  max-height: 100%;
+  max-height: 92%;
   width: auto;
   height: auto;
   object-fit: contain;
   cursor: pointer;
-}
-
-.campaign-splash-close {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: none;
-  background: rgba(0,0,0,0.5);
-  color: #fff;
-  font-size: 1.1rem;
-  cursor: pointer;
-  z-index: 10000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.3);
+  border-radius: 8px;
 }
 
 /* ===== 常設バナー(画面下部) ===== */
