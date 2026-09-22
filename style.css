@@ -1053,3 +1053,114 @@ body.sim-open{overflow:hidden;}
   height: 100%;
   border: 0;
 }
+
+/* ===== キャンペーンスプラッシュ(全画面) ===== */
+.campaign-splash {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity 0.6s ease;
+}
+
+.campaign-splash.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.campaign-splash-img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.campaign-splash-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== 常設バナー(画面下部) ===== */
+.campaign-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9000;
+  background: linear-gradient(90deg, #1a4fa0, #2a6fd6);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 12px 48px 12px 16px;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.15);
+  transform: translateY(0);
+  transition: transform 0.4s ease;
+}
+
+.campaign-banner.is-hidden {
+  transform: translateY(100%);
+}
+
+.campaign-banner-link {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: #fff;
+  text-decoration: none;
+}
+
+.campaign-banner-text {
+  font-size: 0.95rem;
+}
+
+.campaign-banner-cta {
+  background: #fff;
+  color: #1a4fa0;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.campaign-banner-close {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .campaign-banner-text { font-size: 0.8rem; }
+  .campaign-banner-cta { font-size: 0.75rem; padding: 5px 12px; }
+}

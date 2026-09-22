@@ -242,3 +242,44 @@ document.getElementById('menuBtn')?.addEventListener('click', () => {
       });
   });
 })();
+
+// ===== キャンペーンスプラッシュ & バナー制御 =====
+document.addEventListener('DOMContentLoaded', function () {
+  const splash = document.getElementById('campaignSplash');
+  const splashClose = document.getElementById('campaignSplashClose');
+  const banner = document.getElementById('campaignBanner');
+  const bannerClose = document.getElementById('campaignBannerClose');
+
+  if (splash) {
+    const SPLASH_DURATION = 7000; // 7秒後に自動で閉じる(5000〜10000の間で調整可)
+
+    const hideSplash = function () {
+      splash.classList.add('is-hidden');
+      setTimeout(function () {
+        splash.style.display = 'none';
+      }, 600);
+    };
+
+    const timer = setTimeout(hideSplash, SPLASH_DURATION);
+
+    // 画像タップ・クリックでもすぐ閉じられるように
+    splash.addEventListener('click', function () {
+      clearTimeout(timer);
+      hideSplash();
+    });
+
+    if (splashClose) {
+      splashClose.addEventListener('click', function (e) {
+        e.stopPropagation();
+        clearTimeout(timer);
+        hideSplash();
+      });
+    }
+  }
+
+  if (bannerClose && banner) {
+    bannerClose.addEventListener('click', function () {
+      banner.classList.add('is-hidden');
+    });
+  }
+});
