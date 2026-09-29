@@ -1213,3 +1213,12 @@ button.campaign-reopen-btn .campaign-reopen-text {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.06); }
 }
+
+.nb {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+h1 {
+  font-size: clamp(1.6rem, 5vw, 3rem);
+}
