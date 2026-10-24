@@ -428,7 +428,7 @@ function validate(){
   if(!checked('input[name="希望プラン"]').length)bad(form.querySelector('[data-group=plan] input'),'プランを1つ選択してください。');
   if(!checked('input[name="科目"]').length)bad(form.querySelector('[data-group=subj] input'),'科目を1つ以上選択してください。');
   if(checked('.e-agree').length!==agrees.length)bad(form.querySelector('.e-agree'),'すべての項目への同意が必要です。');
-  if(!ready)bad(form.querySelector('#eToConfirm')?$('#eDocs'):null,'PDF未設定のため送信できません。');
+  if(!ready)bad(form.querySelector('[data-group=agree] input'),'PDF未設定のため送信できません。');
   if(first){(first.scrollIntoView||function(){}).call(first,{behavior:'smooth',block:'center'});if(first.focus)first.focus()}
   return !first;
 }
