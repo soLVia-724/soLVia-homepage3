@@ -10,6 +10,42 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@500;700&family=Noto+Serif+JP:wght@500;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Space+Mono&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+.enroll{--e-navy:#16336b;--e-blue:#2b5fc4;--e-line:#cfd9ea;--e-bg:#f4f7fc;--e-err:#c0392b}
+.enroll .e-intro{max-width:760px;margin:0 auto 28px;line-height:1.9}
+.enroll .e-sec{background:#fff;border:1px solid var(--e-line);border-radius:10px;padding:24px 22px;margin:0 auto 22px;max-width:760px}
+.enroll .e-sec h3{margin:0 0 4px;color:var(--e-navy);font-size:1.1rem}
+.enroll .e-sec>.form-help{margin-bottom:18px}
+.enroll .plan-grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.enroll .plan{display:block;cursor:pointer}
+.enroll .plan input{position:absolute;opacity:0}
+.enroll .plan-body{display:block;border:2px solid var(--e-line);border-radius:10px;padding:16px;height:100%;background:#fff}
+.enroll .plan input:checked+.plan-body{border-color:var(--e-blue);background:var(--e-bg)}
+.enroll .plan input:focus-visible+.plan-body{outline:3px solid var(--e-blue);outline-offset:2px}
+.enroll .plan-name{font-weight:700;color:var(--e-navy)}
+.enroll .plan-price{display:block;font-size:1.5rem;font-weight:700;margin:4px 0 10px}
+.enroll .plan-price small{font-size:.75rem;font-weight:400}
+.enroll .plan dl{margin:0;font-size:.88rem;line-height:1.8}
+.enroll .plan dt{float:left;clear:left;margin-right:.5em;color:var(--text-soft,#667)}
+.enroll .plan dd{margin:0;font-weight:500}
+.enroll .e-notes{font-size:.85rem;line-height:1.8;margin:12px 0 0;color:var(--text-soft,#667)}
+.enroll .doc{border:1px solid var(--e-line);border-radius:8px;padding:12px 14px;margin-bottom:10px;display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;align-items:center}
+.enroll .doc a{color:var(--e-blue);font-weight:500}
+.enroll .doc.unset{border-style:dashed;background:#fff8e6}
+.enroll .doc .badge{font-size:.78rem;color:#8a5a00}
+.enroll .doc .bad{font-size:.78rem;color:var(--e-err)}
+.enroll .e-admin{max-width:760px;margin:0 auto 22px;padding:12px 16px;border-radius:8px;background:#fff3cd;font-size:.88rem;line-height:1.7}
+.enroll .e-err{display:block;color:var(--e-err);font-size:.82rem;margin-top:6px}
+.enroll .is-invalid{border-color:var(--e-err)!important}
+.enroll .e-actions{display:flex;gap:12px;flex-wrap:wrap;max-width:760px;margin:0 auto}
+.enroll .e-actions button{flex:1 1 200px;min-height:52px}
+.enroll .e-back{background:#fff;border:2px solid var(--e-navy);color:var(--e-navy);border-radius:8px;cursor:pointer;font-size:1rem}
+.enroll table.e-sum{width:100%;border-collapse:collapse;font-size:.92rem}
+.enroll .e-sum th,.enroll .e-sum td{border-bottom:1px solid var(--e-line);padding:10px 8px;text-align:left;vertical-align:top;word-break:break-word}
+.enroll .e-sum th{width:11em;color:var(--e-navy);font-weight:500}
+.enroll .e-done{max-width:760px;margin:0 auto;text-align:center;line-height:2}
+@media(max-width:560px){.enroll .e-sec{padding:18px 14px}.enroll .e-sum th{width:7em}}
+</style>
 </head>
 <body>
 
@@ -168,6 +204,116 @@
     </div>
   </div>
 
+  <div class="section section-tint enroll" id="enrollRoot">
+  <div class="wrap">
+    <div style="text-align:center;">
+      <div class="eyebrow">ENROLLMENT</div>
+      <h2 id="enroll">本加入のお申し込み</h2>
+    </div>
+    <p class="e-intro">ご利用には保護者の方のお申し込みが必要です。無料体験を受けていない方も、そのままお申し込みいただけます。1回のお申し込みにつき、生徒さん1名分をご入力ください。</p>
+ 
+    <div id="eNotReady" class="e-sec" hidden style="text-align:center;">
+      <h3>本加入のお申し込みは準備中です</h3>
+      <p class="form-help">ご案内の準備が整い次第、こちらから受け付けを開始します。お急ぎの場合は公式LINEまたはメールでお問い合わせください。</p>
+    </div>
+    <div id="eAdmin" class="e-admin" hidden></div>
+ 
+    <form class="solvia-form" id="enrollForm" novalidate action="https://formspree.io/f/【本加入用のFormspree IDに置き換え】" method="POST" hidden>
+ 
+      <div id="eStepInput">
+        <div class="e-sec">
+          <h3>1. 生徒さんの情報</h3>
+          <div class="form-group"><label class="form-label" for="e_sname">生徒氏名<span class="required">必須</span></label><input class="form-input" id="e_sname" name="生徒氏名" required></div>
+          <div class="form-group"><label class="form-label" for="e_skana">生徒氏名（フリガナ）<span class="required">必須</span></label><input class="form-input" id="e_skana" name="生徒氏名（フリガナ）" required></div>
+          <div class="form-group"><label class="form-label" for="e_grade">学年<span class="required">必須</span></label>
+            <select class="form-select" id="e_grade" name="学年" required><option value="">選択してください</option>
+              <option>小学1年生</option><option>小学2年生</option><option>小学3年生</option><option>小学4年生</option><option>小学5年生</option><option>小学6年生</option>
+              <option>中学1年生</option><option>中学2年生</option><option>中学3年生</option><option>高校1年生</option><option>高校2年生</option><option>高校3年生</option><option>その他</option></select></div>
+          <div class="form-group"><label class="form-label" for="e_school">学校名<span style="color:var(--text-soft);font-weight:400;font-size:.78rem;margin-left:6px;">任意</span></label><input class="form-input" id="e_school" name="学校名"></div>
+        </div>
+ 
+        <div class="e-sec">
+          <h3>2. 保護者の方の情報</h3>
+          <div class="form-group"><label class="form-label" for="e_pname">保護者氏名<span class="required">必須</span></label><input class="form-input" id="e_pname" name="保護者氏名" required></div>
+          <div class="form-group"><label class="form-label" for="e_pkana">保護者氏名（フリガナ）<span class="required">必須</span></label><input class="form-input" id="e_pkana" name="保護者氏名（フリガナ）" required></div>
+          <div class="form-group"><label class="form-label" for="e_mail">メールアドレス<span class="required">必須</span></label>
+            <p class="form-help">お申し込み内容の確認、お支払いのご案内、契約に関するご連絡に使用します。受信拒否設定をしている場合は、soLViaからのメールを受け取れるよう設定してください。</p>
+            <input class="form-input" type="email" id="e_mail" name="メールアドレス" required autocomplete="email"></div>
+          <div class="form-group"><label class="form-label" for="e_rel">生徒さんとの続柄<span class="required">必須</span></label>
+            <select class="form-select" id="e_rel" name="続柄" required><option value="">選択してください</option><option>父</option><option>母</option><option>その他</option></select></div>
+        </div>
+ 
+        <div class="e-sec">
+          <h3>3. 無料体験のご利用歴</h3>
+          <div class="form-group" data-group="trial"><label class="form-label">soLViaの無料体験を利用したことがありますか？<span class="required">必須</span></label>
+            <div class="form-checkbox-grid">
+              <label class="form-checkbox-item"><input type="radio" name="無料体験の利用歴" value="利用したことがある"><span>利用したことがある</span></label>
+              <label class="form-checkbox-item"><input type="radio" name="無料体験の利用歴" value="利用したことがない"><span>利用したことがない</span></label></div></div>
+        </div>
+ 
+        <div class="e-sec">
+          <h3>4. ご希望のプラン</h3>
+          <p class="form-help">金額はすべて税込です。1つ選択してください。</p>
+          <div class="form-group" data-group="plan"><div class="plan-grid" id="ePlans"></div><span class="e-err" hidden></span></div>
+          <p class="e-notes">・個別解説の未使用回数は、最大2回分まで翌月に繰り越せます。<br>・アウトプット授業の未使用回数は、繰り越せません。<br>・アウトプット授業は1回60分です。</p>
+        </div>
+ 
+        <div class="e-sec">
+          <h3>5. 学習について</h3>
+          <div class="form-group" data-group="subj"><label class="form-label">主に学習したい科目<span class="required">必須</span></label>
+            <p class="form-help">複数選択できます。</p>
+            <div class="form-checkbox-grid">
+              <label class="form-checkbox-item"><input type="checkbox" name="科目" value="算数"><span>算数</span></label>
+              <label class="form-checkbox-item"><input type="checkbox" name="科目" value="国語"><span>国語</span></label>
+              <label class="form-checkbox-item"><input type="checkbox" name="科目" value="数学"><span>数学</span></label>
+              <label class="form-checkbox-item"><input type="checkbox" name="科目" value="英語"><span>英語</span></label>
+              <label class="form-checkbox-item"><input type="checkbox" name="科目" value="理科"><span>理科</span></label>
+              <label class="form-checkbox-item"><input type="checkbox" name="科目" value="社会"><span>社会</span></label>
+              <label class="form-checkbox-item"><input type="checkbox" name="科目" value="物理"><span>物理</span></label>
+              <label class="form-checkbox-item"><input type="checkbox" name="科目" value="化学"><span>化学</span></label>
+              <label class="form-checkbox-item"><input type="checkbox" name="科目" value="日本史"><span>日本史</span></label>
+              <label class="form-checkbox-item"><input type="checkbox" name="科目" value="公共"><span>公共</span></label>
+              <label class="form-checkbox-item"><input type="checkbox" name="科目" value="その他"><span>その他</span></label></div></div>
+          <div class="form-group"><label class="form-label" for="e_goal">学習の目的・目標<span style="color:var(--text-soft);font-weight:400;font-size:.78rem;margin-left:6px;">任意</span></label>
+            <p class="form-help">定期テスト対策、模試対策、入試対策、苦手科目の克服など、学習の目的や目標があれば入力してください。</p><textarea class="form-textarea" id="e_goal" name="学習の目的・目標"></textarea></div>
+          <div class="form-group"><label class="form-label" for="e_weak">現在、特に苦手としている分野<span style="color:var(--text-soft);font-weight:400;font-size:.78rem;margin-left:6px;">任意</span></label>
+            <p class="form-help">現在苦手としている科目・単元などがあれば入力してください。具体的な問題がなくても構いません。</p><textarea class="form-textarea" id="e_weak" name="苦手分野"></textarea></div>
+          <div class="form-group"><label class="form-label" for="e_other">その他、事前に伝えておきたいこと<span style="color:var(--text-soft);font-weight:400;font-size:.78rem;margin-left:6px;">任意</span></label><textarea class="form-textarea" id="e_other" name="その他"></textarea></div>
+        </div>
+ 
+        <div class="e-sec">
+          <h3>6. お支払い・契約について</h3>
+          <p class="form-help" style="margin-bottom:0;line-height:1.9">・お支払いは銀行振込（ゆうちょ銀行）のみです。クレジットカードはご利用いただけません。<br>・お申し込み内容を確認後、振込先とお支払い期限をご案内します。初回料金の入金確認後にご利用開始となります。<br>・契約は1か月単位で、利用開始日を基準に毎月自動更新されます。更新時は、次の1か月分を前払いでお支払いいただきます。<br>・解約は、保護者の方からメールで、更新日の1週間前までにお申し出ください。詳細は下記の各書類でご確認ください。</p>
+        </div>
+ 
+        <div class="e-sec">
+          <h3>7. 各種書類のご確認と同意</h3>
+          <p class="form-help">各書類をお読みのうえ、同意してください。</p>
+          <div id="eDocs"></div>
+          <div class="form-group" data-group="agree" style="margin-top:18px;margin-bottom:0"><div class="form-checkbox-grid" id="eAgrees"></div><span class="e-err" hidden></span></div>
+        </div>
+ 
+        <div class="e-actions"><button type="button" class="form-submit-btn" id="eToConfirm">入力内容を確認する</button></div>
+      </div>
+ 
+      <div id="eStepConfirm" hidden>
+        <div class="e-sec"><h3>入力内容のご確認</h3><p class="form-help">内容をご確認のうえ、「この内容で申し込む」を押してください。</p>
+          <table class="e-sum" id="eSummary"></table>
+          <div class="form-group" style="margin:18px 0 0"><div class="form-checkbox-grid"><label class="form-checkbox-item"><input type="checkbox" id="e_confirm"><span>入力内容に誤りがないことを確認しました</span></label></div><span class="e-err" hidden id="eConfirmErr"></span></div></div>
+        <div class="e-actions"><button type="button" class="e-back" id="eBack">入力に戻る</button><button type="submit" class="form-submit-btn" id="eSubmit">この内容で申し込む</button></div>
+        <div class="form-status" id="eStatus" role="alert"></div>
+      </div>
+    </form>
+ 
+    <div id="eDone" class="e-done" hidden>
+      <h3 style="color:var(--e-navy)">本加入のお申し込みを受け付けました</h3>
+      <p>soLViaにお申し込みいただき、ありがとうございます。<br>お申し込み内容を確認後、ご登録いただいたメールアドレス宛に、今後のお手続きとお支払いについてご案内いたします。<br>初回料金の入金確認後にサービスをご利用いただけます。<br>運営者からのメールをご確認ください。</p>
+      <p class="form-help">公式LINEもあわせてお友だち追加ください。</p>
+      <a class="btn btn-outline-navy" id="eLine" target="_blank" rel="noopener">公式LINEを追加する</a>
+    </div>
+  </div>
+</div>
+
   <div class="section section-tint compact">
     <div class="wrap" style="text-align:center;">
       <div class="eyebrow">MAIL</div>
@@ -221,5 +367,99 @@
 </footer>
 
 <script src="script.js"></script>
+
+  <script>
+(function(){
+/* ===== 管理者設定（ここだけ編集） ===== */
+var CFG={
+  lineUrl:'https://lin.ee/7RnWp3B',   // 公式LINE（空欄なら完了画面のボタン非表示）
+  // 書類URL。完成したPDFのパス/URLを入れる。空欄＝未設定。
+  docs:[
+    {key:'terms',   title:'利用規約',               url:'', agree:'利用規約を確認し、同意します。'},
+    {key:'privacy', title:'プライバシーポリシー',   url:'', agree:'プライバシーポリシーを確認しました。'},
+    {key:'tokushou',title:'特定商取引法に基づく表記',url:'', agree:null},
+    {key:'payment', title:'料金・支払い条件',       url:'', agree:'支払い条件を確認しました。'},
+    {key:'cancel',  title:'解約条件',               url:'', agree:'解約条件を確認しました。'}
+  ],
+  plans:[
+    {id:'復習プラン',name:'復習プラン',price:'7,980',kai:'月3回まで',out:'なし'},
+    {id:'定着プラン',name:'定着プラン',price:'14,980',kai:'月5回まで',out:'月2回まで（1回60分）'},
+    {id:'実践プラン',name:'実践プラン',price:'19,980',kai:'月7回まで',out:'月4回まで（1回60分）'}
+  ]
+};
+/* ===== ここから下は通常編集不要 ===== */
+var $=function(s){return document.querySelector(s)};
+var form=$('#enrollForm');if(!form)return;
+var unset=CFG.docs.filter(function(d){return !d.url});
+var preview=/[?&]preview=1/.test(location.search);
+var ready=unset.length===0;
+if(!ready&&!preview){$('#eNotReady').hidden=false;return;}
+form.hidden=false;
+if(!ready){var a=$('#eAdmin');a.hidden=false;a.textContent='【管理者プレビュー】PDF未設定の書類があります（'+unset.map(function(d){return d.title}).join('、')+'）。すべて設定するまで送信はできず、一般公開画面には本フォームは表示されません。';}
+ 
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+ 
+$('#ePlans').innerHTML=CFG.plans.map(function(p){
+  return '<label class="plan"><input type="radio" name="希望プラン" value="'+esc(p.id+'（月額'+p.price+'円・税込）')+'"><span class="plan-body"><span class="plan-name">'+esc(p.name)+'</span><span class="plan-price">'+p.price+'円<small>／月（税込）</small></span><dl><dt>個別解説</dt><dd>'+esc(p.kai)+'</dd><dt>アウトプット授業</dt><dd>'+esc(p.out)+'</dd></dl></span></label>';
+}).join('');
+ 
+$('#eDocs').innerHTML=CFG.docs.map(function(d,i){
+  if(!d.url)return '<div class="doc unset"><strong>'+esc(d.title)+'</strong><span class="badge">PDF未設定（管理者向け表示）</span></div>';
+  return '<div class="doc" data-i="'+i+'"><strong>'+esc(d.title)+'</strong><a href="'+esc(d.url)+'" target="_blank" rel="noopener">開いて読む（PDF）</a></div>';
+}).join('');
+// リンク切れ検知
+CFG.docs.forEach(function(d,i){if(!d.url)return;fetch(d.url,{method:'HEAD'}).then(function(r){if(!r.ok)throw 0}).catch(function(){
+  var el=document.querySelector('.doc[data-i="'+i+'"]');if(el)el.insertAdjacentHTML('beforeend','<span class="bad">読み込めません。お手数ですがメールでお問い合わせください。</span>');});});
+ 
+var agrees=[CFG.docs[0].agree,'選択したプランの内容と料金を確認しました。','保護者として、本申し込みおよび生徒の利用に同意します。'].concat(CFG.docs.slice(1).map(function(d){return d.agree})).filter(Boolean);
+$('#eAgrees').innerHTML=agrees.map(function(t,i){return '<label class="form-checkbox-item"><input type="checkbox" class="e-agree" value="同意済み" name="同意'+(i+1)+'"><span>'+esc(t)+'</span></label>'}).join('');
+ 
+function checked(sel){return form.querySelectorAll(sel+':checked')}
+function showErr(el,msg){var g=el.closest('.form-group');var e=g&&g.querySelector('.e-err');if(!e){e=document.createElement('span');e.className='e-err';g.appendChild(e)}e.textContent=msg;e.hidden=false;if(el.classList)el.classList.add('is-invalid')}
+function clearErrs(){form.querySelectorAll('.e-err').forEach(function(e){e.hidden=true;e.textContent=''});form.querySelectorAll('.is-invalid').forEach(function(e){e.classList.remove('is-invalid')})}
+ 
+function validate(){
+  clearErrs();var first=null;
+  function bad(el,msg){showErr(el,msg);first=first||el}
+  form.querySelectorAll('#eStepInput [required]').forEach(function(f){
+    if(!f.value.trim())bad(f,'入力してください。');
+    else if(f.type==='email'&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.value))bad(f,'メールアドレスの形式で入力してください。');});
+  if(!checked('input[name="無料体験の利用歴"]').length)bad(form.querySelector('[data-group=trial] input'),'いずれか1つを選択してください。');
+  if(!checked('input[name="希望プラン"]').length)bad(form.querySelector('[data-group=plan] input'),'プランを1つ選択してください。');
+  if(!checked('input[name="科目"]').length)bad(form.querySelector('[data-group=subj] input'),'科目を1つ以上選択してください。');
+  if(checked('.e-agree').length!==agrees.length)bad(form.querySelector('.e-agree'),'すべての項目への同意が必要です。');
+  if(!ready)bad(form.querySelector('#eToConfirm')?$('#eDocs'):null,'PDF未設定のため送信できません。');
+  if(first){(first.scrollIntoView||function(){}).call(first,{behavior:'smooth',block:'center'});if(first.focus)first.focus()}
+  return !first;
+}
+function val(n){var l=form.querySelectorAll('[name="'+n+'"]');var o=[];l.forEach(function(x){if((x.type==='checkbox'||x.type==='radio')){if(x.checked)o.push(x.value)}else o.push(x.value)});return o.join('、')}
+$('#eToConfirm').onclick=function(){
+  if(!validate())return;
+  var rows=['生徒氏名','生徒氏名（フリガナ）','学年','学校名','保護者氏名','保護者氏名（フリガナ）','メールアドレス','続柄','無料体験の利用歴','希望プラン','科目','学習の目的・目標','苦手分野','その他'];
+  $('#eSummary').innerHTML=rows.map(function(n){return '<tr><th>'+esc(n)+'</th><td>'+(esc(val(n))||'―').replace(/\n/g,'<br>')+'</td></tr>'}).join('')+'<tr><th>お支払い</th><td>銀行振込（ゆうちょ銀行）／1か月単位・毎月自動更新</td></tr>';
+  $('#eStepInput').hidden=true;$('#eStepConfirm').hidden=false;form.scrollIntoView({behavior:'smooth'});
+};
+$('#eBack').onclick=function(){$('#eStepConfirm').hidden=true;$('#eStepInput').hidden=false;form.scrollIntoView({behavior:'smooth'})};
+ 
+var sending=false;
+form.addEventListener('submit',function(ev){
+  ev.preventDefault();if(sending||!ready)return;
+  var ce=$('#eConfirmErr');if(!$('#e_confirm').checked){ce.textContent='ご確認のチェックをお願いします。';ce.hidden=false;return}
+  ce.hidden=true;sending=true;var b=$('#eSubmit');b.disabled=true;b.textContent='送信中…';
+  var fd=new FormData();
+  ['生徒氏名','生徒氏名（フリガナ）','学年','学校名','保護者氏名','保護者氏名（フリガナ）','メールアドレス','続柄','無料体験の利用歴','希望プラン','科目','学習の目的・目標','苦手分野','その他'].forEach(function(n){fd.append(n,val(n))});
+  fd.append('同意事項',agrees.join(' / '));fd.append('入力内容の確認','確認済み');
+  fd.append('_subject','【soLVia】本加入のお申し込みがありました');
+  fetch(form.action,{method:'POST',body:fd,headers:{Accept:'application/json'}}).then(function(r){
+    if(!r.ok)throw 0;form.hidden=true;$('#eDone').hidden=false;
+    if(CFG.lineUrl)$('#eLine').href=CFG.lineUrl;else $('#eLine').hidden=true;
+    $('#eDone').scrollIntoView({behavior:'smooth'});
+  }).catch(function(){
+    sending=false;b.disabled=false;b.textContent='この内容で申し込む';
+    var s=$('#eStatus');s.textContent='送信できませんでした。通信状況をご確認のうえ、もう一度お試しください。解決しない場合は soLVia724.gt@gmail.com までご連絡ください。';
+  });
+});
+})();
+</script>
 </body>
 </html>
