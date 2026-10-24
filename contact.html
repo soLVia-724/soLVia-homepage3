@@ -442,21 +442,31 @@ $('#eToConfirm').onclick=function(){
 $('#eBack').onclick=function(){$('#eStepConfirm').hidden=true;$('#eStepInput').hidden=false;form.scrollIntoView({behavior:'smooth'})};
  
 var sending=false;
+var st=$('#eStatus');
+function say(msg){st.textContent=msg;st.style.color='#c0392b';st.scrollIntoView({behavior:'smooth',block:'center'})}
+$('#e_confirm').addEventListener('change',function(){$('#eConfirmErr').hidden=true});
 form.addEventListener('submit',function(ev){
-  ev.preventDefault();if(sending||!ready)return;
-  var ce=$('#eConfirmErr');if(!$('#e_confirm').checked){ce.textContent='ご確認のチェックをお願いします。';ce.hidden=false;return}
-  ce.hidden=true;sending=true;var b=$('#eSubmit');b.disabled=true;b.textContent='送信中…';
+  ev.preventDefault();
+  if(sending)return;
+  st.textContent='';
+  if(!ready){say('PDF未設定の書類があるため送信できません。');return}
+  var ce=$('#eConfirmErr');
+  if(!$('#e_confirm').checked){ce.textContent='ご確認のチェックをお願いします。';ce.hidden=false;return}
+  ce.hidden=true;
+  if(/[^\x00-\x7F]/.test(form.getAttribute('action'))){say('送信先（Formspree）の設定が完了していません。action のIDを確認してください。');return}
+  sending=true;var b=$('#eSubmit');b.disabled=true;b.textContent='送信中…';
   var fd=new FormData();
   ['生徒氏名','生徒氏名（フリガナ）','学年','学校名','保護者氏名','保護者氏名（フリガナ）','メールアドレス','続柄','無料体験の利用歴','希望プラン','科目','学習の目的・目標','苦手分野','その他'].forEach(function(n){fd.append(n,val(n))});
   fd.append('同意事項',agrees.join(' / '));fd.append('入力内容の確認','確認済み');
   fd.append('_subject','【soLVia】本加入のお申し込みがありました');
   fetch(form.action,{method:'POST',body:fd,headers:{Accept:'application/json'}}).then(function(r){
-    if(!r.ok)throw 0;form.hidden=true;$('#eDone').hidden=false;
+    if(!r.ok){return r.text().then(function(t){console.error('Formspree',r.status,t);throw new Error('エラー番号 '+r.status)})}
+    form.hidden=true;$('#eDone').hidden=false;
     if(CFG.lineUrl)$('#eLine').href=CFG.lineUrl;else $('#eLine').hidden=true;
     $('#eDone').scrollIntoView({behavior:'smooth'});
-  }).catch(function(){
+  }).catch(function(err){
     sending=false;b.disabled=false;b.textContent='この内容で申し込む';
-    var s=$('#eStatus');s.textContent='送信できませんでした。通信状況をご確認のうえ、もう一度お試しください。解決しない場合は soLVia724.gt@gmail.com までご連絡ください。';
+    say('送信できませんでした（'+(err&&err.message?err.message:'通信エラー')+'）。通信状況をご確認のうえ、もう一度お試しください。解決しない場合は soLVia724.gt@gmail.com までご連絡ください。');
   });
 });
 })();
