@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@500;700&family=Noto+Serif+JP:wght@500;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Space+Mono&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="page-v2">
 
 <header>
   <div class="nav-wrap">
@@ -34,10 +34,15 @@
 
 <main>
   <div class="hero compact">
-    <div class="wrap">
+    <div class="wrap hero-layout">
+      <div class="hero-main">
       <div class="hero-eyebrow">ABOUT / MESSAGE</div>
       <h1>代表の想い</h1>
       <p class="lead">「諦めそうな学生さんを、第一志望まで導きたい。」<br>その一心で、soLViaを立ち上げました。</p>
+    </div>
+      <div class="hero-media">
+        <img class="hero-photo" src="https://images.pexels.com/photos/6325984/pexels-photo-6325984.jpeg?auto=compress&w=1260&h=750&dpr=1" alt="自宅からビデオ通話で指導する講師" fetchpriority="high">
+      </div>
     </div>
   </div>
 
@@ -173,10 +178,14 @@
       所在地：オンライン専業のため、事務所所在地の公開表示はありません<br>
       ※ マイページは、ご契約後にお渡しするsoLVia公式の生徒さん専用ページです。
     </div>
+    <div style="font-size:.72rem;color:#8fa0c2;margin-bottom:6px;">代表の想いページの写真：Pexels（Vanessa Garcia）</div>
     <div>© 2026 soLVia. All Rights Reserved.</div>
   </div>
 </footer>
 
 <script src="script.js"></script>
+<script>
+(function(){var sel='.price-card,.material-card,.about-feature,.stat-card,.cycle-step,.callout-box,.section-photo,.founder-profile';var els=[].slice.call(document.querySelectorAll(sel));for(var i=0;i<els.length;i++){els[i].classList.add('reveal');}if(!('IntersectionObserver' in window)){for(var j=0;j<els.length;j++){els[j].classList.add('in');}return;}var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});},{threshold:.12});els.forEach(function(e){io.observe(e);});})();
+</script>
 </body>
 </html>

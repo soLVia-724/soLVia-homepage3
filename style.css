@@ -1287,3 +1287,20 @@ h1 {
   .founder-mini{grid-template-columns:1fr;padding:26px;gap:22px;}
   .founder-mini img{height:240px;}
 }
+
+/* ============================================================
+   Design v2（下層ページ共通）2026-11-08
+   body.page-v2 のページ（service/price/about/contact）に適用
+   ============================================================ */
+.page-v2 .hero{background:linear-gradient(120deg,var(--navy-deep) 55%,var(--navy-mid) 135%);}
+.hero.compact .hero-photo{height:320px;}
+.page-v2 .btn{border-radius:999px;}
+.page-v2 .btn-solid{box-shadow:0 10px 26px rgba(79,179,224,.45);}
+.page-v2 .price-card{border-radius:18px;}
+.page-v2 .material-card{border-radius:16px;box-shadow:0 8px 24px rgba(13,27,54,.07);}
+.page-v2 .stat-card{border-radius:16px;}
+.page-v2 .about-feature{border-radius:16px;}
+.page-v2 .callout-box{border-radius:16px;}
+@media (max-width:860px){
+  .hero.compact .hero-photo{height:240px;}
+}
