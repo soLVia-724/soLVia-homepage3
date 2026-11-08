@@ -84,7 +84,7 @@
 </p>
 <p class="contact-note">ご契約後の授業のご予約は、このフォームではなく、お渡ししたマイページから行ってください。</p>
 
-      <form class="solvia-form" id="solviaForm"    assets/logo.JPG"https://formspree.io/f/myeypkrr" method="POST">
+      <form class="solvia-form" id="solviaForm" action="https://formspree.io/f/myeypkrr" method="POST">
 
         <div class="form-group">
           <label class="form-label" for="student_name">生徒さんのお名前<span class="required">必須</span></label>
@@ -95,7 +95,7 @@
           <label class="form-label" for="line_name">LINE上の表示名<span class="required">必須</span></label>
           <p class="form-help">
             公式LINEでご連絡する際に必要です。LINEに登録されている「名前」を、絵文字も含めて正確にご記入ください。（例：田中たろう🎮）<br>
-            LINEアプリの「ホーム」→ご自身のアイコンをタップすると確認できます。
+            LINEアプリの「ホーム」→ご自身のアイコンをタップすると確認できます。正確な表記が分からない場合は、分かる範囲でご記入ください。送信後に公式LINEで確認しますので、ご安心ください。
           </p>
           <input class="form-input" type="text" id="line_name" name="LINE上の表示名" required>
         </div>
@@ -136,7 +136,7 @@
         <div class="form-group">
           <label class="form-label" for="hope1">オンライン解説の希望日時（第一希望）<span class="required">必須</span></label>
           <p class="form-help">
-            オンライン解説をご希望の日時をご記入ください。当日2時間前までのご予約が可能です。（例：10月5日(日) 19:00〜）基本はZoomで実施します。
+            オンライン解説をご希望の日時をご記入ください。当日2時間前までのご予約が可能です。対応時間は平日17:00〜24:00／土日祝13:00〜24:00です。（例：10月5日(日) 19:00〜）基本はZoomで実施します。
           </p>
           <input class="form-input" type="text" id="hope1" name="希望日時（第一希望）" required>
         </div>
@@ -256,7 +256,7 @@
           <h3>4. ご希望のプラン</h3>
           <p class="form-help">金額はすべて税込です。1つ選択してください。</p>
           <div class="form-group" data-group="plan"><div class="plan-grid" id="ePlans"></div><span class="e-err" hidden></span></div>
-          <p class="e-notes">・個別解説の未使用回数は、最大2回分まで翌月に繰り越せます。<br>・アウトプット授業の未使用回数は、繰り越せません。<br>・アウトプット授業は1回60分です。</p>
+          <p class="e-notes">・個別解説の未使用回数は、最大2回分まで翌月に繰り越せます。<br>・アウトプット授業の未使用回数は、繰り越せません。<br>・アウトプット授業は1回標準60分です（必要に応じて、講師の判断で最大15分まで延長します）。</p>
         </div>
  
         <div class="e-sec">
@@ -284,7 +284,7 @@
  
         <div class="e-sec">
           <h3>6. お支払い・契約について</h3>
-          <p class="form-help" style="margin-bottom:0;line-height:1.9">・お支払いは銀行振込のみです。クレジットカードはご利用いただけません。<br>・お申し込み内容を確認後、振込先とお支払い期限をご案内します。初回料金の入金確認後にご利用開始となります。<br>・契約は1か月単位で、利用開始日を基準に毎月自動更新されます。更新時は、次の1か月分を前払いでお支払いいただきます。<br>・解約は、保護者の方からメールで、更新日の1週間前までにお申し出ください。詳細は下記の各書類でご確認ください。</p>
+          <p class="form-help" style="margin-bottom:0;line-height:1.9">・お支払いは銀行振込のみです。クレジットカードはご利用いただけません。<br>・入会金・教材費はかかりません。初回料金は月額料金のみです。<br>・お申し込み内容を確認後、振込先とお支払い期限をご案内します。初回料金の入金確認後にご利用開始となります。<br>・契約は1か月単位で、利用開始日を基準に毎月自動更新されます。更新時は、次の1か月分を前払いでお支払いいただきます。<br>・解約は、保護者の方からメールで、更新日の2週間前までにお申し出ください。詳細は下記の各書類でご確認ください。</p>
         </div>
  
         <div class="e-sec">
@@ -363,6 +363,13 @@
         <span class="social-item-label">X</span>
       </div>
     </div>
+    <div style="margin:0 0 16px;font-size:.85rem;line-height:1.8;">
+      運営者情報：soLVia（ソルビア）／個人経営<br>
+      代表者：蒲田和希<br>
+      お問い合わせ：<a href="mailto:soLVia724.gt@gmail.com">soLVia724.gt@gmail.com</a><br>
+      所在地：オンライン専業のため、事務所所在地の公開表示はありません<br>
+      ※ マイページは、ご契約後にお渡しするsoLVia公式の生徒さん専用ページです。
+    </div>
     <div>© 2026 soLVia. All Rights Reserved.</div>
   </div>
 </footer>
@@ -384,8 +391,8 @@ var CFG={
   ],
   plans:[
     {id:'復習プラン',name:'復習プラン',price:'7,980',kai:'月3回まで',out:'なし'},
-    {id:'定着プラン',name:'定着プラン',price:'14,980',kai:'月5回まで',out:'月2回まで（1回60分）'},
-    {id:'実践プラン',name:'実践プラン',price:'19,980',kai:'月7回まで',out:'月4回まで（1回60分）'}
+    {id:'定着プラン',name:'定着プラン',price:'14,980',kai:'月5回まで',out:'月2回まで（1回標準60分）'},
+    {id:'実践プラン',name:'実践プラン',price:'19,980',kai:'月7回まで',out:'月4回まで（1回標準60分）'}
   ]
 };
 /* ===== ここから下は通常編集不要 ===== */
@@ -401,7 +408,7 @@ if(!ready){var a=$('#eAdmin');a.hidden=false;a.textContent='【管理者プレ�
 function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
  
 $('#ePlans').innerHTML=CFG.plans.map(function(p){
-  return '<label class="plan"><input type="radio" name="希望プラン" value="'+esc(p.id+'（月額'+p.price+'円・税込）')+'"><span class="plan-body"><span class="plan-name">'+esc(p.name)+'</span><span class="plan-price">'+p.price+'円<small>／月（税込）</small></span><dl><dt>個別解説</dt><dd>'+esc(p.kai)+'</dd><dt>アウトプット授業</dt><dd>'+esc(p.out)+'</dd></dl></span></label>';
+  return '<label class="plan"><input type="radio" name="希望プラン" value="'+esc(p.id+'（月額'+p.price+'円・税込）')+'"><span class="plan-body"><span class="plan-name">'+esc(p.name)+'</span><span class="plan-price">'+p.price+'円<small>／月（税込）</small></span><dl><dt>オンライン解説</dt><dd>'+esc(p.kai)+'</dd><dt>アウトプット授業</dt><dd>'+esc(p.out)+'</dd></dl></span></label>';
 }).join('');
  
 $('#eDocs').innerHTML=CFG.docs.map(function(d,i){
